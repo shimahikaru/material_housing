@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :companies
 
   resources :brands do
-    resources :comments, only: [:index, :show, :new, :create, :destroy]
+    resources :comments, only: [:index, :show, :new, :create]
      collection do
       get :search
       get :about
