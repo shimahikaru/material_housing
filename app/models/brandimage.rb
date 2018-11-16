@@ -1,0 +1,2 @@
+class Brandimage < ApplicationRecord
+end
