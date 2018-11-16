@@ -12,4 +12,8 @@ class Brand < ApplicationRecord
   has_many :tags, inverse_of: :brand, dependent: :delete_all
   accepts_nested_attributes_for :tags, reject_if: :all_blank, allow_destroy: true
 
+  has_many :sizes, through: :brand_sizes
+  has_many :brand_sizes
+  accepts_nested_attributes_for :brand_sizes, reject_if: :all_blank, allow_destroy: true
+
 end
