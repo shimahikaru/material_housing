@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_051036) do
+ActiveRecord::Schema.define(version: 2018_11_17_052432) do
+
+  create_table "brand_depthsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "brand_id"
+    t.bigint "depthsize_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_depthsizes_on_brand_id"
+    t.index ["depthsize_id"], name: "index_brand_depthsizes_on_depthsize_id"
+  end
 
   create_table "brand_heightsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "brand_id"
@@ -70,6 +79,12 @@ ActiveRecord::Schema.define(version: 2018_11_17_051036) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "depthsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "depth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "brand_id", null: false
     t.string "photo"
@@ -110,6 +125,8 @@ ActiveRecord::Schema.define(version: 2018_11_17_051036) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "brand_depthsizes", "brands"
+  add_foreign_key "brand_depthsizes", "depthsizes"
   add_foreign_key "brand_heightsizes", "brands"
   add_foreign_key "brand_heightsizes", "heightsizes"
   add_foreign_key "brand_sizes", "brands"

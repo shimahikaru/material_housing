@@ -1,0 +1,90 @@
+   <%= form_with model: @brand, :url => { :controller => :brands, :action => :create }, local: true  do |f| %>
+
+     <div class="field">
+      <p><%= f.label :ブランド名 %></p>
+     <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ブランド名を入力" , class: 'form' %>
+     </div>
+
+     <div class="field">
+      <p><%= f.label :説明 %></p>
+     <%= f.text_area :text, autofocus: true, autocomplete: "text", placeholder: "説明を入力", class: 'form' %>
+     </div>
+
+     <div class="field">
+     <p><%= f.label :カテゴリー %><a>※</a></p>
+     <%= f.select :location, Brand.locations.keys, {prompt: '選択してください'}, class: 'form' %><br />
+     </div>
+
+     <div class="field">
+     <p><%= f.label :グレード %><a>※</a></p>
+     <%= f.select :grade, Brand.grades.keys, {prompt: '選択してください'}, class: 'form' %><br />
+     </div>
+
+     <div class="field">
+     <p><%= f.label :最低価格 %><a>※</a></p>
+     <%= f.text_field :price, autofocus: true, autocomplete: "price",  class: 'form' %>
+     </div>
+
+      <div class="field">
+     <p><%= f.label :標準時のカラバリ %><a>※</a></p>
+     <%= f.number_field :color, autofocus: true, step: "1", autocomplete: "color", class: 'form' %>
+     </div>
+
+     <div class="field">
+     <p><%= f.label :ホームページ %></p>
+     <%= f.url_field :pagelink, autofocus: true, autocomplete: "pagelink",  placeholder: "url", class: 'form' %>
+     </div>
+
+     <div class="field">
+     <p><%= f.label :ワイドサイズ%></p>
+     <label><%= f.collection_check_boxes(:size_ids, Size.all, :id, :widthsize) do |b| %>
+      <%=  b.check_box %><a><%= b.label { b.text } %></a>
+      <% end %></label>
+     </div>
+
+     <div class="field">
+     <p><%= f.label :高さ%></p>
+     <label><%= f.collection_check_boxes(:heightsize_ids, Heightsize.all, :id, :height) do |b| %>
+      <%=  b.check_box %><a><%= b.label { b.text } %></a>
+      <% end %></label>
+     </div>
+
+     <div class="field">
+     <p><%= f.label :奥行き%></p>
+     <label><%= f.collection_check_boxes(:depthsize_ids, Depthsize.all, :id, :depth) do |b| %>
+      <%=  b.check_box %><a><%= b.label { b.text } %></a>
+      <% end %></label>
+     </div>
+
+
+      <div class="field">
+      <p>ブランドを使用している画像(最大５枚)</p>
+        <%= f.fields_for :brandimages do |i| %>
+          <label><%= i.file_field :image, id: "", :class => "add_whole_photos", autofocus: true  %></label>
+          <%= i.text_field :comment, autofocus: true, autocomplete: "comment",  placeholder: "写真の説明" , class: 'title_detail' %>
+        <% end %>
+       </div>
+
+      <div class="field">
+      <p>ブランドの売り・一押し部分</p>
+        <%= f.fields_for :details do |i| %>
+          <label><%= i.file_field :photo, id: "", :class => "add_whole_photos", autofocus: true  %></label>
+          <%= i.text_field :title, autofocus: true, autocomplete: "title",  placeholder: "一押しを一言で" , class: 'title_detail' %>
+          <%= i.text_area :text, autofocus: true, autocomplete: "text",  placeholder: "一押しを更に詳しく" , class: 'title_detail' %>
+        <% end %>
+       </div>
+
+      <div class="field">
+      <p>どんな人にオススメか（簡潔に）</p>
+        <%= f.fields_for :tags do |i| %>
+          <label>
+          <%= i.text_area :about, autofocus: true, autocomplete: "about",  placeholder: "どんな人にオススメか。" , class: 'title_detail' %></label>
+        <% end %>
+       </div>
+
+
+        <div class="field">
+        <%= f.submit "この内容で投稿する", class: 'product button' %>
+        </div>
+
+    <% end %>

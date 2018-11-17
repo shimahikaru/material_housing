@@ -1,0 +1,5 @@
+<p><%= @company.name %></p>
+
+<% if user_signed_in? %>
+<%= link_to "ブランドを投稿", new_company_brand_path(@company.id) %>
+<% end %>

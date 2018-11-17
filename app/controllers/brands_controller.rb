@@ -54,11 +54,11 @@ class BrandsController < ApplicationController
 
   private
   def create_params
-    params.require(:brand).permit(:name, :location, :text, :grade, :price, :pagelink, :company_id, { :size_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :location, :text, :grade, :price, :pagelink, :company_id, { :size_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
   def update_params
-    params.require(:brand).permit(:name, :location, :text, :grade, :price, :pagelink, { :size_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :location, :text, :grade, :price, :pagelink, { :size_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
 
