@@ -1,9 +1,15 @@
 class BrandsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def index
+    @image = Brandimage.group(:brand_id)
+    @brands = Brand.select(:id, :name, :location, :grade)
   end
 
   def show
+    @brand = Brand.find(params[:id])
+    @images = @brand.brandimages
+    @sizes = @brand.brand_sizes
+    @comments = @brand.comments
   end
 
   def new

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_16_093131) do
+ActiveRecord::Schema.define(version: 2018_11_17_051036) do
+
+  create_table "brand_heightsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "brand_id"
+    t.bigint "heightsize_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_heightsizes_on_brand_id"
+    t.index ["heightsize_id"], name: "index_brand_heightsizes_on_heightsize_id"
+  end
 
   create_table "brand_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "brand_id"
@@ -39,6 +48,7 @@ ActiveRecord::Schema.define(version: 2018_11_16_093131) do
     t.string "pagelink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "color"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,6 +79,12 @@ ActiveRecord::Schema.define(version: 2018_11_16_093131) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "heightsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "widthsize"
     t.datetime "created_at", null: false
@@ -94,6 +110,8 @@ ActiveRecord::Schema.define(version: 2018_11_16_093131) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "brand_heightsizes", "brands"
+  add_foreign_key "brand_heightsizes", "heightsizes"
   add_foreign_key "brand_sizes", "brands"
   add_foreign_key "brand_sizes", "sizes"
 end

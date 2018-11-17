@@ -16,4 +16,7 @@ class Brand < ApplicationRecord
   has_many :brand_sizes
   accepts_nested_attributes_for :brand_sizes, reject_if: :all_blank, allow_destroy: true
 
+  has_many :heightsizes, through: :brand_heightsizes
+  has_many :brand_heightsizes
+  accepts_nested_attributes_for :brand_heightsizes, reject_if: :all_blank, allow_destroy: true
 end
