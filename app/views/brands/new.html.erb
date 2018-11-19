@@ -5,6 +5,11 @@
      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ブランド名を入力" , class: 'form' %>
      </div>
 
+      <div class="field">
+        <p><%= f.label :どこのメーカー %></p>
+      <%= f.collection_select :company_id, @company.all, :id, :name %>
+      </div>
+
      <div class="field">
       <p><%= f.label :説明 %></p>
      <%= f.text_area :text, autofocus: true, autocomplete: "text", placeholder: "説明を入力", class: 'form' %>

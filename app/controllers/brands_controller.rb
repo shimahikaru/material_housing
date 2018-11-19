@@ -9,22 +9,30 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
     @images = @brand.brandimages
     @sizes = @brand.brand_sizes
-    @comments = @brand.comments
+    @heightsizes = @brand.brand_heightsizes
+    @depthsizes = @brand.brand_depthsizes
+    @details = @brand.details
+    @tags = @brand.tags
+    # @comments = @brand.comments
+  end
+
+  def search
+   @brands = Brand.select(:id, :name, :company_id, :location, :grade)
+   @brandimages = Brandimage.group(:brand_id)
+   @brands = @brands.where(location: params[:location]) if params[:location].present?
   end
 
   def new
-    @company = Company.find(params[:company_id])
     @brand = Brand.new
-    @brand.company_id = @company.id
+    @company = Company.all
     5.times { @brand.brandimages.build }
     5.times { @brand.details.build }
     5.times { @brand.tags.build }
   end
 
   def create
-    @company = Company.find(params[:company_id])
-    @brand.company_id = @company.id
     @brand = Brand.new(create_params)
+    @company = Company.all
     if @brand.save
     else
       ( 5 - @brand.brandimages.to_a.count).times { @brand.brandimages.build }
@@ -54,11 +62,11 @@ class BrandsController < ApplicationController
 
   private
   def create_params
-    params.require(:brand).permit(:name, :location, :text, :grade, :price, :pagelink, :company_id, { :size_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :location, :text, :grade, :price, :pagelink, :color, :company_id, { :size_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
   def update_params
-    params.require(:brand).permit(:name, :location, :text, :grade, :price, :pagelink, { :size_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :location, :company_id, :text, :grade, :price, :pagelink, :color, { :size_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
 

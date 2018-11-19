@@ -1,2 +1,4 @@
 
-<p><%= link_to company.name, company_path(company.id) %></p>
+<%= link_to(company_path(company.id), class: 'list-content') do %>
+<%= company.name %>
+<% end %>

@@ -1,0 +1,36 @@
+
+
+<p><%= @brand.name %></p>
+<p><%= @brand.location %></p>
+<p><%= @brand.grade %></p>
+<p><%= @brand.price %></p>
+<p><%= @brand.text %></p>
+<p><%= @brand.pagelink %></p>
+<p><%= @brand.color %></p>
+
+<% @images.each do |p| %>
+<%= image_tag p.image_url %>
+<%= p.comment %>
+<% end %>
+
+<% @details.each do |p| %>
+<%= image_tag p.photo_url %>
+<%= p.title %>
+<%= p.text %>
+<% end %>
+
+<% @tags.each do |p| %>
+<p><%= p.about %></p>
+<% end %>
+
+<% @sizes.each do |i| %>
+<p><%= i.size.widthsize %></p>
+<% end %>
+
+<% @heightsizes.each do |i| %>
+<p><%= i.heightsize.height %></p>
+<% end %>
+
+<% @depthsizes.each do |i| %>
+<p><%= i.depthsize.depth %></p>
+<% end %>

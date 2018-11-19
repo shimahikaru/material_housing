@@ -1,3 +1,73 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.conteiner {
+margin-top: 55px;
+h5 {
+  font-size: 13px;
+}
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+}
+width: 100%;
+    .conA, .conB, .conC, .conD {
+      width: 99%;
+      max-width: 1200px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 20px;
+    }
+  .conB {
+    a.company_index {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 35px;
+      display: inline-block;
+      background-color: #fff;
+      margin-top: 15px;
+      width: 100%;
+      max-width: 900px;
+      color: #777777;
+      border: solid 1px #bbbfc3;
+      border-radius: 3px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 15px;
+      color: #f65314;
+      border-left: solid 4px #f65314;
+      line-height: 33px;
+    }
+  .conB-1 {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+     a.list-content {
+      background-color: #fff;
+      width: 180px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 40px;
+      margin: 2px;
+      color: #777777;
+      }
+    }
+   }
+  .conC {
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 15px;
+      color: #f65314;
+      border-left: solid 4px #f65314;
+      line-height: 33px;
+    }
+  }
+}

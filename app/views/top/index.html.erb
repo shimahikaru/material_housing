@@ -1,3 +1,101 @@
-<p>
-    Hello Wordl!
-</p>
+<%= stylesheet_link_tag  'top', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="conteiner">
+    <div class="conA">
+    <h5>住宅設備・内装の比較、口コミ、情報を集めたWebサイト</h5>
+    <h1>マテリアルハウジング</h1>
+    </div>
+
+    <div class="conB">
+    <p>カテゴリーから探す</p>
+      <div class="conB-1">
+        <%= link_to(search_brands_path(location: "キッチン"), class: 'list-content') do %>
+        キッチン
+        <% end %>
+        <%= link_to(search_brands_path(location: "バス"), class: 'list-content') do %>
+        バス
+        <% end %>
+        <%= link_to(search_brands_path(location: "ラバトリー"), class: 'list-content') do %>
+        ラバトリー
+        <% end %>
+        <%= link_to(search_brands_path(location: "トイレ"), class: 'list-content') do %>
+        トイレ
+        <% end %>
+        <%= link_to(search_brands_path(location: "トビラ"), class: 'list-content') do %>
+        トビラ
+        <% end %>
+        <%= link_to(search_brands_path(location: "タタミ"), class: 'list-content') do %>
+        タタミ
+        <% end %>
+        <%= link_to(search_brands_path(location: "クロス"), class: 'list-content') do %>
+        クロス
+        <% end %>
+        <%= link_to(search_brands_path(location: "塗り壁"), class: 'list-content') do %>
+        塗り壁
+        <% end %>
+        <%= link_to(search_brands_path(location: "カーテン"), class: 'list-content') do %>
+        カーテン
+        <% end %>
+        <%= link_to(search_brands_path(location: "玄関収納"), class: 'list-content') do %>
+        玄関収納
+        <% end %>
+        <%= link_to(search_brands_path(location: "自然素材"), class: 'list-content') do %>
+        自然素材
+        <% end %>
+        <%= link_to(search_brands_path(location: "カーペット"), class: 'list-content') do %>
+        カーペット
+        <% end %>
+        <%= link_to(search_brands_path(location: "バス"), class: 'list-content') do %>
+        バス
+        <% end %>
+        <%= link_to(search_brands_path(location: "リビング収納"), class: 'list-content') do %>
+        リビング収納
+        <% end %>
+        <%= link_to(search_brands_path(location: "照明"), class: 'list-content') do %>
+        照明
+        <% end %>
+        <%= link_to(search_brands_path(location: "水回りアクセサリー"), class: 'list-content') do %>
+        水回りアクセサリー
+        <% end %>
+        <%= link_to(search_brands_path(location: "ペット向け"), class: 'list-content') do %>
+        ペット向け
+        <% end %>
+      </div>
+    </div>
+
+    <div class="conB">
+    <p>メーカーから探す</p>
+        <div class="conB-1">
+        <%= render partial: 'companies/company', collection: @companies %>
+        </div>
+        <%= link_to 'メーカーをもっと見る', companies_path,  class: 'company_index' %>
+    </div>
+
+    <div class="conB">
+    <p>グレードから探す</p>
+      <div class="conB-1">
+      <%= link_to(search_brands_path(grade: ""), class: 'list-content') do %>
+      ハイグレード
+      <% end %>
+      <%= link_to(search_brands_path(grade: "やや高め"), class: 'list-content') do %>
+      やや高め
+      <% end %>
+      <%= link_to(search_brands_path(grade: "ベーシック"), class: 'list-content') do %>
+      ベーシック
+      <% end %>
+      <%= link_to(search_brands_path(grade: "お手頃"), class: 'list-content') do %>
+      お手頃
+      <% end %>
+      </div>
+    </div>
+    <div class="conC">
+    <p>口コミを見る</p>
+    </div>
+    <div class="conC">
+    <p>詳細検索</p>
+    </div>
+
+    <div class="conD">
+    <p>住宅設備・内装についてのお得な情報</p>
+    </div>
+</div>
