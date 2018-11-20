@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   post 'inquiries/confirm', to: 'inquiries#confirm'
   post 'inquiries/complete', to: 'inquiries#complete'
 
+  resources :questions do
+    resources :answers
+  end
+
   resources :editors do
     collection do
     get :search
