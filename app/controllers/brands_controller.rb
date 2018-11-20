@@ -16,10 +16,18 @@ class BrandsController < ApplicationController
     # @comments = @brand.comments
   end
 
+  def about
+    @company = Company.all
+  end
+
   def search
    @brands = Brand.select(:id, :name, :company_id, :location, :grade)
    @brandimages = Brandimage.group(:brand_id)
    @brands = @brands.where(location: params[:location]) if params[:location].present?
+   @brands = @brands.where(company_id: params[:company_id]) if params[:company_id].present?
+   @brands = @brands.where(grade: params[:grade]) if params[:grade].present?
+   @brands = @brands.search_keyword(params[:keywords]) if params[:keywords] && params[:keywords].compact.reject(&:empty?).present?
+   @brands = @brands.search_keyword(params[:keyword_id]) if params[:keyword_id].present?
   end
 
   def new

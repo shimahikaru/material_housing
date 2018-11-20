@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_052432) do
+ActiveRecord::Schema.define(version: 2018_11_19_115239) do
 
   create_table "brand_depthsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "brand_id"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2018_11_17_052432) do
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_brand_heightsizes_on_brand_id"
     t.index ["heightsize_id"], name: "index_brand_heightsizes_on_heightsize_id"
+  end
+
+  create_table "brand_keywords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "brand_id"
+    t.bigint "keyword_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_keywords_on_brand_id"
+    t.index ["keyword_id"], name: "index_brand_keywords_on_keyword_id"
   end
 
   create_table "brand_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -94,8 +103,23 @@ ActiveRecord::Schema.define(version: 2018_11_17_052432) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "editors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "category"
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "heightsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "keywords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "word"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -129,6 +153,8 @@ ActiveRecord::Schema.define(version: 2018_11_17_052432) do
   add_foreign_key "brand_depthsizes", "depthsizes"
   add_foreign_key "brand_heightsizes", "brands"
   add_foreign_key "brand_heightsizes", "heightsizes"
+  add_foreign_key "brand_keywords", "brands"
+  add_foreign_key "brand_keywords", "keywords"
   add_foreign_key "brand_sizes", "brands"
   add_foreign_key "brand_sizes", "sizes"
 end

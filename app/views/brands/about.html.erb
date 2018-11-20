@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag  'about', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="search">
+
+  <div class="container">
+  <h3>詳細検索</h3>
+
+  <%= form_with url: search_brands_path, method: :get, local: true do |f| %>
+
+    <div class="field">
+    <p>カテゴリー</p>
+    <%= f.select :location, Brand.locations.keys, {prompt: '選択してください'}, class: 'form' %><br />
+    </div>
+
+    <div class="field">
+    <p>メーカー</p>
+    <%= f.collection_select :company_id, @company.all, :id, :name, {prompt: '選択してください'} %>
+    </div>
+
+    <div class="field">
+    <p>グレード</p>
+    <%= f.select :grade, Brand.grades.keys, {prompt: '選択してください'}, class: 'form' %><br />
+    </div>
+
+    <div class="field">
+    <p>キーワード</p>
+    <label><div class= "tag"><%= f.collection_check_boxes(:keywords, Keyword.all, :id, :word) do |b| %>
+    <%=  b.check_box %><a><%= b.label { b.text } %></a>
+    <% end %></div>
+    </label>
+    </div>
+
+    <div class="field">
+    <%= f.submit "検索", class: 'button', name: nil %>
+    </div>
+
+  </div>
+
+</div>
+
+<% end %>

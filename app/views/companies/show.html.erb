@@ -1,5 +1,13 @@
-<p><%= @company.name %></p>
+<%= stylesheet_link_tag  'companies', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="container">
+  <div class="contentA">
+    <h2><%= @company.name %></h2>
+    <h5><%= @company.subtitle %></h5>
+    <p><%= simple_format(@company.text) %></p>
+  </div>
+</div>
 
 <% if user_signed_in? %>
-<%= link_to "ブランドを投稿", new_company_brand_path(@company.id) %>
+<%= link_to "ブランドを投稿", new_brand_path %>
 <% end %>

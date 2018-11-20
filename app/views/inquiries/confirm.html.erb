@@ -1,0 +1,28 @@
+
+<%= form_with model: @inquiry, :url => inquiries_complete_path, local: true do |f| %>
+  <div class="usernew">
+    <h3>お問い合わせ内容確認</h3>
+
+  <div class="field">
+  <p><%= f.label :"名前" %></p>
+  <%= f.hidden_field :name %>
+  <div class=" form"><%= @inquiry.name %></div>
+  </div>
+
+  <div class="field">
+  <p><%= f.label :"メールアドレス" %></p>
+  <%= f.hidden_field :email %>
+  <div class=" form"><%= @inquiry.email %></div>
+  </div>
+
+  <div class="field">
+  <p><%= f.label :"お問い合わせ内容" %></p>
+  <%= f.hidden_field :message %>
+  <div class="form"><%= simple_format(@inquiry.message) %></div>
+  </div>
+
+
+  <%= f.submit '確認',class: 'user button' %>
+  </div>
+  <% end %>
+  </div>
