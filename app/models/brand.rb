@@ -28,6 +28,15 @@ class Brand < ApplicationRecord
   has_many :keywords, through: :brand_keywords
   accepts_nested_attributes_for :brand_keywords, reject_if: :all_blank, allow_destroy: true
 
+  has_many :brand_othersizes
+  has_many :othersizes, through: :brand_othersizes
+  accepts_nested_attributes_for :brand_othersizes, reject_if: :all_blank, allow_destroy: true
+
+  has_many :brand_matelials
+  has_many :materials, through: :brand_materials
+  # accepts_nested_attributes_for :brand_materials, reject_if: :all_blank, allow_destroy: true
+
+
   def self.search_keyword(words)
       keyword = BrandKeyword.searchkeywords(words)
       self.where(id: keyword)
@@ -38,7 +47,7 @@ class Brand < ApplicationRecord
   }
 
   enum grade: {
-   ライト:1, ベーシック:2, ハイグレード:3, プレミアムハイグレード:4
+   ベーシック:1, スタンダード:2, ハイグレード:3
   }
 
 end

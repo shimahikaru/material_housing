@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_043923) do
+ActiveRecord::Schema.define(version: 2018_11_21_103153) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "question_id"
@@ -46,6 +46,24 @@ ActiveRecord::Schema.define(version: 2018_11_20_043923) do
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_brand_keywords_on_brand_id"
     t.index ["keyword_id"], name: "index_brand_keywords_on_keyword_id"
+  end
+
+  create_table "brand_materials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "brand_id"
+    t.bigint "material_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_materials_on_brand_id"
+    t.index ["material_id"], name: "index_brand_materials_on_material_id"
+  end
+
+  create_table "brand_othersizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "brand_id"
+    t.bigint "othersize_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_othersizes_on_brand_id"
+    t.index ["othersize_id"], name: "index_brand_othersizes_on_othersize_id"
   end
 
   create_table "brand_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -133,6 +151,18 @@ ActiveRecord::Schema.define(version: 2018_11_20_043923) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "materials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "materialname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "othersizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "questionimg"
     t.integer "category"
@@ -175,6 +205,10 @@ ActiveRecord::Schema.define(version: 2018_11_20_043923) do
   add_foreign_key "brand_heightsizes", "heightsizes"
   add_foreign_key "brand_keywords", "brands"
   add_foreign_key "brand_keywords", "keywords"
+  add_foreign_key "brand_materials", "brands"
+  add_foreign_key "brand_materials", "materials"
+  add_foreign_key "brand_othersizes", "brands"
+  add_foreign_key "brand_othersizes", "othersizes"
   add_foreign_key "brand_sizes", "brands"
   add_foreign_key "brand_sizes", "sizes"
 end
