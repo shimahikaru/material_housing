@@ -37,3 +37,31 @@ width: 100%;
       }
   }
 }
+
+.content_company {
+  text-align: center;
+    .company_index {
+      background-color: #fff;
+      margin-bottom: 10px;
+      width: 98%;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+      padding: 7px;
+      a {
+        text-decoration: none;
+      }
+        h3 {
+          color: #000;
+          font-size: 20px;
+          line-height: 35px;
+        }
+        h5 {
+          font-size: 14px;
+          line-height: 22px;
+          color: #777777;
+        }
+    }
+}
+
+

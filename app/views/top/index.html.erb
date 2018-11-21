@@ -98,7 +98,7 @@
     <div class="conB">
     <p>メーカーから探す</p>
         <div class="conB-1">
-        <%= render partial: 'companies/company', collection: @companies %>
+        <%= render partial: 'top/company', collection: @companies %>
         </div>
         <%= link_to(companies_path,  class: 'company_index') do %>
         もっと見る(<%= @companies_count %>)

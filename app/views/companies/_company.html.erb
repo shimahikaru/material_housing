@@ -1,4 +1,8 @@
+<%= stylesheet_link_tag  'companies', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+<div class="company_index">
 <%= link_to(company_path(company.id), class: 'list-content') do %>
-<%= company.name %>
+<h3><%= company.name %></h3>
+<h5><%= company.subtitle %></h5>
 <% end %>
+</div>
