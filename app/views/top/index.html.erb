@@ -108,17 +108,14 @@
     <div class="conB">
     <p>グレードから探す</p>
       <div class="conB-1">
-      <%= link_to(search_brands_path(grade: "プレミアムハイグレード"), class: 'list-content') do %>
-      プレミアムハイグレード
-      <% end %>
       <%= link_to(search_brands_path(grade: "ハイグレード"), class: 'list-content') do %>
       ハイグレード
       <% end %>
+      <%= link_to(search_brands_path(grade: "スタンダード"), class: 'list-content') do %>
+      スタンダード
+      <% end %>
       <%= link_to(search_brands_path(grade: "ベーシック"), class: 'list-content') do %>
       ベーシック
-      <% end %>
-      <%= link_to(search_brands_path(grade: "ライト"), class: 'list-content') do %>
-      ライト
       <% end %>
       </div>
     </div>
