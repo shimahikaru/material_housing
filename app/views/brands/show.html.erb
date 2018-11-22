@@ -6,16 +6,17 @@
 
   <div class="slide">
   <% @images.each_with_index do |p, i| %>
+  <div id="image<%= i %>">
   <%= image_tag p.image_url, :class => "image_view" %>
-  <p><%= p.comment %></p>
-  <% break if i== 0 %>
+  <p id="comment"><%= p.comment %></p>
+  </div>
   <% end %>
   </div>
 
   <div class="image">
   <% @images.each do |p| %>
   <%= image_tag p.image_url, :class => "image_slide" %>
-  <p><%= p.comment %></p>
+  <p class => "comment_slide" ><%= p.comment %></p>
   <% end %>
   </div>
 
@@ -70,7 +71,7 @@
 
 <div class="listD">
   <div class="pickupA">
-  <%= image_tag 'hito.png', :size =>'40x40' %><p class=listE>こんな人にオススメ！</p>
+  <%= image_tag 'hito.png', :size =>'25x25' %><p class=listE>こんな人にオススメ！</p>
   </div>
 <% @tags.each do |p| %>
 <p><%= simple_format(p.about) %></p>
@@ -85,3 +86,57 @@
 </div>
 
 </div>
+
+<script>
+var i = 0;
+  $(".image_slide").each(function(i) {
+    $(this).attr('id','photo' + (i+1));
+});
+  $(".comment_slide").each(function(i) {
+    $(this).attr('id','comment' + (i+1));
+});
+
+$(function(){
+  $("#image1").hide();
+  $("#image2").hide();
+  $("#image3").hide();
+  $("#image4").hide();
+});
+
+  $("#photo1").on('click', function(){
+    $("#image1").hide();
+    $("#image2").hide();
+    $("#image3").hide();
+    $("#image4").hide();
+    $("#image0").show();
+  });
+  $("#photo2").on('click', function(){
+    $("#image0").hide();
+    $("#image2").hide();
+    $("#image3").hide();
+    $("#image4").hide();
+    $("#image1").show();
+  });
+  $("#photo3").on('click', function(){
+    $("#image1").hide();
+    $("#image0").hide();
+    $("#image3").hide();
+    $("#image4").hide();
+    $("#image2").show();
+  });
+  $("#photo4").on('click', function(){
+    $("#image1").hide();
+    $("#image2").hide();
+    $("#image0").hide();
+    $("#image4").hide();
+    $("#image3").show();
+  });
+  $("#photo5").on('click', function(){
+    $("#image1").hide();
+    $("#image2").hide();
+    $("#image3").hide();
+    $("#image0").hide();
+    $("#image4").show();
+  });
+
+</script>
