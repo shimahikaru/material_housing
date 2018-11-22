@@ -11,6 +11,7 @@ Rails.application.config.assets.precompile += %w( top.css )
 Rails.application.config.assets.precompile += %w( companies.css )
 Rails.application.config.assets.precompile += %w( about.css )
 Rails.application.config.assets.precompile += %w( brands.css )
+Rails.application.config.assets.precompile += %w( brandshow.css )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

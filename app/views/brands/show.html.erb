@@ -1,36 +1,86 @@
+<%= stylesheet_link_tag  'brandshow', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+<div class="container">
+<h2><%= @brand.name %></h2>
+<h4><%= link_to @brand.location, search_brands_path(location: @brand.location) %> / <%= link_to @brand.company.name, company_path(@brand.company) %></h4>
 
-<p><%= @brand.name %></p>
-<p><%= @brand.location %></p>
-<p><%= @brand.grade %></p>
-<p><%= @brand.price %></p>
+  <div class="slide">
+  <% @images.each_with_index do |p, i| %>
+  <%= image_tag p.image_url, :class => "image_view" %>
+  <p><%= p.comment %></p>
+  <% break if i== 0 %>
+  <% end %>
+  </div>
+
+  <div class="image">
+  <% @images.each do |p| %>
+  <%= image_tag p.image_url, :class => "image_slide" %>
+  <p><%= p.comment %></p>
+  <% end %>
+  </div>
+
+<div class="listA">
+<p>グレード：<%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
+<p>価格：<%= @brand.price %>円〜</p>
+<p>カラー：<%= @brand.color %>色</p>
+
+<%if @sizes.count > 0 %>
+  <p>Ｗ：<% @sizes.each do |i| %>
+  <%= link_to i.size.widthsize, search_brands_path(size_id: i.size_id)  %>
+  <% end %></p>
+<% end %>
+
+<%if @heightsizes.count > 0 %>
+  <p>Ｈ：<% @heightsizes.each do |i| %>
+  <%= link_to i.heightsize.height, search_brands_path(heightsize_id: i.heightsize_id)  %>
+  <% end %></p>
+<% end %>
+
+<%if @depthsizes.count > 0 %>
+  <p>Ｄ：<% @depthsizes.each do |i| %>
+  <%= link_to i.depthsize.depth, search_brands_path(depthsize_id: i.depthsize_id) %>
+  <% end %></p>
+<% end %>
+
+<%if @othersizes.count > 0 %>
+  <p>サイズ：<% @othersizes.each do |i| %>
+  <%= link_to i.othersize.other, search_brands_path(othersize_id: i.othersize_id) %>
+  <% end %></p>
+<% end %>
+
+<%if @brand.pagelink %>
+<p><%= link_to 'ウェブカタログ', @brand.pagelink %></p>
+<% end %>
+
 <p><%== @brand.text %></p>
-<p><%= @brand.pagelink %></p>
-<p><%= @brand.color %></p>
 
-<% @images.each do |p| %>
-<%= image_tag p.image_url %>
-<%= p.comment %>
-<% end %>
+</div>
 
-<% @details.each do |p| %>
-<%= image_tag p.photo_url %>
-<%= p.title %>
-<%= p.text %>
-<% end %>
 
+<div class="listB">
+    <div class="pickup">
+    <%= image_tag 'light.png', :size =>'40x40' %><p class=listC>イチオシ機能</p>
+    </div>
+    <% @details.each do |p| %>
+    <h3><%= p.title %></h3>
+    <%= image_tag p.photo_url, :class => "listB_img" %>
+    <%= simple_format(p.text) %>
+    <% end %>
+</div>
+
+<div class="listD">
+  <div class="pickupA">
+  <%= image_tag 'hito.png', :size =>'40x40' %><p class=listE>こんな人にオススメ！</p>
+  </div>
 <% @tags.each do |p| %>
-<p><%= p.about %></p>
+<p><%= simple_format(p.about) %></p>
 <% end %>
+</div>
 
-<% @sizes.each do |i| %>
-<p><%= i.size.widthsize %></p>
+<div class="listF">
+<% @keywords.each do |i| %>
+<%= link_to "##{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
 <% end %>
+</div>
 
-<% @heightsizes.each do |i| %>
-<p><%= i.heightsize.height %></p>
-<% end %>
-
-<% @depthsizes.each do |i| %>
-<p><%= i.depthsize.depth %></p>
-<% end %>
+</div>

@@ -42,6 +42,26 @@ class Brand < ApplicationRecord
       self.where(id: keyword)
   end
 
+  def self.search_size(widthes)
+      width = BrandSize.searchsizes(widthes)
+      self.where(id: width)
+  end
+
+  def self.search_heightsize(heightes)
+      height = BrandHeightsize.searchheightsizes(heightes)
+      self.where(id: height)
+  end
+
+  def self.search_depthsize(depthes)
+      depth = BrandDepthsize.searchdepthsizes(depthes)
+      self.where(id: depth)
+  end
+
+  def self.search_othersize(otheres)
+      other = BrandOthersize.searchothersizes(otheres)
+      self.where(id: other)
+  end
+
   enum location: {
     "キッチン":1, 食洗機:2, ラバトリー:3, バス:4, トイレ:5, 玄関収納:6, リビング収納:7, キッチン収納:8, "収納(その他)":9, フローリング:10, タタミ:11, カーペット:12, クッションフロア:13, 玄関床:14, "床(その他)":15, クロス:16, 塗り壁:17, "壁(自然素材)":18, "壁(その他)":19, ペット向け:20, タイル:21, 扉:22, 照明:23, カーテン:24, "水回りアクセサリー":25
   }

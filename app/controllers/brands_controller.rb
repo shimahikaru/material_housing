@@ -11,6 +11,8 @@ class BrandsController < ApplicationController
     @sizes = @brand.brand_sizes
     @heightsizes = @brand.brand_heightsizes
     @depthsizes = @brand.brand_depthsizes
+    @othersizes = @brand.brand_othersizes
+    @keywords = @brand.brand_keywords
     @details = @brand.details
     @tags = @brand.tags
     # @comments = @brand.comments
@@ -28,6 +30,10 @@ class BrandsController < ApplicationController
    @brands = @brands.where(grade: params[:grade]) if params[:grade].present?
    @brands = @brands.search_keyword(params[:keywords]) if params[:keywords] && params[:keywords].compact.reject(&:empty?).present?
    @brands = @brands.search_keyword(params[:keyword_id]) if params[:keyword_id].present?
+   @brands = @brands.search_size(params[:size_id]) if params[:size_id].present?
+   @brands = @brands.search_heightsize(params[:heightsize_id]) if params[:heightsize_id].present?
+   @brands = @brands.search_depthsize(params[:depthsize_id]) if params[:depthsize_id].present?
+   @brands = @brands.search_othersize(params[:othersize_id]) if params[:othersize_id].present?
   end
 
   def new
