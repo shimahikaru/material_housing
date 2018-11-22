@@ -14,7 +14,7 @@
 
      <div class="field">
       <p><%= f.label :説明 %></p>
-     <%= f.text_area :text, autofocus: true, autocomplete: "text", placeholder: "説明を入力", class: 'form setumei' %>
+     <%= f.cktext_area :text, autofocus: true, autocomplete: "text", placeholder: "説明を入力", class: 'form setumei' %>
      </div>
 
      <div class="field">
@@ -96,6 +96,12 @@
         <% end %>
        </div>
 
+     <div class="field">
+     <p><%= f.label :その他のサイズ%></p>
+     <label><%= f.collection_check_boxes(:keyword_ids, Keyword.all, :id, :word) do |b| %>
+      <%=  b.check_box %><a><%= b.label { b.text } %></a>
+      <% end %></label>
+     </div>
 
         <div class="field">
         <%= f.submit "この内容で投稿する", class: 'product button' %>
