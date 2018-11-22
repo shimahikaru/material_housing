@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag  'brands', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-   <%= form_with model: @brand, :url => { :controller => :brands, :action => :create }, local: true  do |f| %>
+   <%= form_with model: @brand, :url => { :controller => :brands, :action => :update }, local: true  do |f| %>
 
      <div class="field">
       <p><%= f.label :ブランド名 %></p>
