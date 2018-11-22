@@ -60,6 +60,7 @@ class BrandsController < ApplicationController
 
   def update
     @brand = Brand.find(params[:id])
+    @company = Company.all
     if @brand.update(update_params)
     else
     ( 5 - @brand.brandimages.to_a.count).times { @brand.brandimages.build }
