@@ -17,3 +17,36 @@
     height: 350px;
    }
 }
+
+.list-content {
+  background-color: #fff;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5px;
+  text-align: left;
+  width: 98%;
+  padding: 15px 5px;
+  margin-bottom: 25px;
+  a {
+    text-decoration: none;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+   img.image_view {
+    width: 100%;
+   }
+   .listA {
+      color: #000;
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 27px;
+      }
+      p {
+        padding-bottom: 10px;
+        font-size: 13px;
+      }
+   }
+}

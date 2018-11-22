@@ -77,6 +77,7 @@
 <% end %>
 </div>
 
+<div class="word">キーワード：</div>
 <div class="listF">
 <% @keywords.each do |i| %>
 <%= link_to "##{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>

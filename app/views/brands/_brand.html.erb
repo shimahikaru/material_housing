@@ -1,3 +1,14 @@
-<%= link_to(brand_path(brand.id), class: 'list-content') do %>
-<%= brand.name %>
+<%= stylesheet_link_tag  'brands', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="list-content">
+<%= link_to(brand_path(brand.id)) do %>
+  <div class="listA">
+  <h3><%= brand.name %></h3>
+  <p><%= brand.location %> / <%= brand.grade %></p>
+  </div>
+  <% brand.brandimages.each_with_index do |p, i| %>
+  <%= image_tag p.image_url, :class => "image_view" %>
+  <% break if i== 0 %>
+  <% end %>
 <% end %>
+</div>

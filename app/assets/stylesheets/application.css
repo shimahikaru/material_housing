@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+
  *= require_self
  */
 
@@ -86,14 +86,32 @@ body {
   background-color:  #fffaec;
 }
 
+
   .header {
+    position: absolute;
     display: flex;
-    align-items: center;
-    height: 55px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
     justify-content: space-between;
-    margin: auto 2%;
+    align-items: center;
+    width: 95%;
+    height: 45px;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
   }
- .header.content {
+ .header a.content {
   text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  color: #f65314;
+ }
+ .content.question {
+  padding-top: 9px;
+ }
+
+ @media (min-width: 1100px)  {
+
  }
 
