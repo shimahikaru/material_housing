@@ -27,6 +27,6 @@ CarrierWave.configure do |config|
         config.asset_host = 'https://materialhome.s3.amazonaws.com'
     when 'production'
         config.fog_directory  = 'materialhome'
-        config.asset_host = 'https://amaterialhome.s3.amazonaws.com'
+        config.asset_host = 'https://materialhome.s3.amazonaws.com'
     end
 end
