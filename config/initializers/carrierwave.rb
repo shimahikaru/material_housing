@@ -22,9 +22,6 @@ CarrierWave.configure do |config|
   }
 
     case Rails.env
-    when 'development'
-        config.fog_directory  = 'materialhome'
-        config.asset_host = 'https://materialhome.s3.amazonaws.com'
     when 'production'
         config.fog_directory  = 'materialhome'
         config.asset_host = 'https://materialhome.s3.amazonaws.com'
