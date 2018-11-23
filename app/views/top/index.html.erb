@@ -3,8 +3,8 @@
 <div class="conteiner">
     <div class="conA">
 
-    <h5>住まいの設備・素材を比較しよう！</h5>
-    <h1>ハウスマテリアル<%= image_tag 'home.png', :size =>'23x23' %></h1>
+    <h5>住まいの設備や素材を比較・検討できる<br >「住まいのセカンドオピニオン」</h5>
+    <h1>住まいのセカオピ！<%= image_tag 'home.png', :size =>'23x23' %></h1>
          <div class="panda">
          <%= image_tag 'panda.png', :size =>'280x150' %>
          </div>
@@ -122,28 +122,28 @@
     <div class="conB">
     <p>住宅設備・内装についての役立つ情報</p>
         <div class="conB-1">
-        <%= link_to(search_editors_path(grade: "住宅基礎知識"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "住宅基礎知識"), class: 'list-content') do %>
         住宅基礎知識
         <% end %>
-        <%= link_to(search_editors_path(grade: "キッチン"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "キッチン"), class: 'list-content') do %>
         キッチン
         <% end %>
-        <%= link_to(search_editors_path(grade: "バス・洗面所・トイレ"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "バス・洗面所・トイレ"), class: 'list-content') do %>
         バス・洗面所・トイレ
         <% end %>
-        <%= link_to(search_editors_path(grade: "リビング・個室"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "リビング・個室"), class: 'list-content') do %>
         リビング・個室
         <% end %>
-        <%= link_to(search_editors_path(grade: "最新トレンド"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "最新トレンド"), class: 'list-content') do %>
         最新トレンド
         <% end %>
-        <%= link_to(search_editors_path(grade: "コーディネート"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "コーディネート"), class: 'list-content') do %>
         コーディネート
         <% end %>
-        <%= link_to(search_editors_path(grade: "コラム"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "コラム"), class: 'list-content') do %>
         コラム
         <% end %>
-        <%= link_to(search_editors_path(grade: "その他"), class: 'list-content') do %>
+        <%= link_to(search_editors_path(category: "その他"), class: 'list-content') do %>
         その他
         <% end %>
         </div>

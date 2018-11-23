@@ -1,12 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <%= @editor.title %>
-</p>
-
+<%= stylesheet_link_tag  'editors', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="editor">
+  <div class="container">
+  <%= image_tag @editor.avatar_url, :class =>"image" %>
+  <h3><%= @editor.title %></h3>
+  <h4>カテゴリー：<%= link_to(search_editors_path(category: @editor.category), class: 'list-content') do %>
+  <%= @editor.category %>
+  <% end %></h4>
 <p>
   <%== @editor.description %>
 </p>
-
-<%= link_to 'Edit', edit_editor_path(@editor) %> |
-<%= link_to 'Back', editors_path %>
+</div>
+</div>

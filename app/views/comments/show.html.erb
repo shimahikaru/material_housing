@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag  'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="index">
+  <div class="list-content show">
+    <h3>【<%= link_to @comment.brand.name, brand_path(@comment.brand) %>】の評価</h3>
+    <% if @comment.place_image? %>
+    <%= image_tag @comment.place_image_url, :class=>"image" %>
+    <% end %>
+    <p><%= @comment.comment %></p>
+    <h4>評価：<%= @comment.score %>点 / 10点満点中</h4>
+    <h4>名前：<%= @comment.name %></h4>
+  </div>
+</div>

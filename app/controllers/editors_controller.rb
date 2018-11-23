@@ -5,12 +5,20 @@ class EditorsController < ApplicationController
   # GET /editors.json
   def index
     @editors = Editor.all
+    @editors = @editors.where(category: params[:category]) if params[:category].present?
+
   end
 
   # GET /editors/1
   # GET /editors/1.json
   def show
+    @editor = Editor.find(params[:id])
   end
+
+ def search
+  @editors = Editor.all
+  @editors = @editors.where(category: params[:category])
+end
 
   # GET /editors/new
   def new

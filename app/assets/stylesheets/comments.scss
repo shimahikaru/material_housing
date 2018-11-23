@@ -32,4 +32,27 @@
        }
      }
    }
+   .list-content.show {
+    img.image {
+      width: 100%;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      line-height: 26px;
+       a {
+        color: #000;
+       }
+    }
+    p {
+      font-size: 13px;
+      line-height: 23px;
+    }
+    h4 {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 24px;
+    }
+   }
 }

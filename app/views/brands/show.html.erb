@@ -116,7 +116,9 @@
     <%= f.submit "口コミを投稿する", class: ' btn' %>
     </div>
     <% end %>
-    <%= link_to "#{@brand.name}のクチコミをみる", comments_path %>
+    <div class="containerB">
+    <%= link_to ">>#{@brand.name}のクチコミをみる", comments_path, :class => "comment_link" %>
+  </div>
 </div>
 
 <script>
