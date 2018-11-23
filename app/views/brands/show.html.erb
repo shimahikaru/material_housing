@@ -87,6 +87,35 @@
 
 </div>
 
+<div class="containerA">
+   <%= form_with model: @comment, :url => { :controller => :comments, :action => :create } do |f| %>
+
+      <div class="field hidden">
+      <%= f.collection_select :brand_id, @brands.all, :id, :name, { :selected => @brand.id.to_i } %>
+      </div>
+
+    <div class="field">
+    <%= f.text_field :name, autocomplete: "name",  placeholder: "お名前", class: 'form formA' %>
+    </div>
+
+    <div class="field">
+    <%= f.file_field :place_image, autocomplete: "place_image",  placeholder: "写真" , class: ' form' %>
+    </div>
+
+    <div class="field">
+    <%= f.text_area :comment, autocomplete: "comment",  placeholder: "実際に使用してみて良かったところ、いまいちだったところ、これから選ぶ方達の為のアドバイスなどを是非教えてください。" , class: ' form' %>
+    </div>
+
+    <div class="field">
+    <%= f.number_field :score, autocomplete: "score", placeholder: "1~10の間で評価を入力", in: 1...11, class: ' form formA' %>
+    </div>
+
+    <div class="field">
+    <%= f.submit "口コミを投稿する", class: ' btn' %>
+    </div>
+    <% end %>
+</div>
+
 <script>
 var i = 0;
   $(".image_slide").each(function(i) {

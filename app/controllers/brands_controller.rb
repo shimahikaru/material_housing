@@ -15,7 +15,8 @@ class BrandsController < ApplicationController
     @keywords = @brand.brand_keywords
     @details = @brand.details
     @tags = @brand.tags
-    # @comments = @brand.comments
+    @comment = Comment.new
+    @brands = Brand.select(:id, :name)
   end
 
   def about
