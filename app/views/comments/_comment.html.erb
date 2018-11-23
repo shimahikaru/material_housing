@@ -1,0 +1,10 @@
+
+<div class="list-content">
+<%= link_to(comment_path(comment.id)) do %>
+  <div class="listA">
+  <h3><%= comment.name %></h3>
+  <p>評価  <%= comment.score %>点 / 10点満点中</p>
+  <p><%= comment.comment.truncate(50) %></p>
+  </div>
+<% end %>
+</div>

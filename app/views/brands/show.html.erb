@@ -21,6 +21,7 @@
   </div>
 
 <div class="listA">
+<ul>
 <p>グレード：<%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
 <p>価格：<%= @brand.price %>円〜</p>
 <p>カラー：<%= @brand.color %>色</p>
@@ -52,7 +53,7 @@
 <%if @brand.pagelink %>
 <p><%= link_to 'ウェブカタログ', @brand.pagelink %></p>
 <% end %>
-
+</ul>
 <p><%== @brand.text %></p>
 
 </div>
@@ -88,6 +89,7 @@
 </div>
 
 <div class="containerA">
+  <p>感想・クチコミ投稿フォーム</p>
    <%= form_with model: @comment, :url => { :controller => :comments, :action => :create } do |f| %>
 
       <div class="field hidden">
@@ -95,7 +97,7 @@
       </div>
 
     <div class="field">
-    <%= f.text_field :name, autocomplete: "name",  placeholder: "お名前", class: 'form formA' %>
+    <%= f.text_field :name, autocomplete: "name",  placeholder: "お名前(必須)", class: 'form formA' %>
     </div>
 
     <div class="field">
@@ -103,20 +105,39 @@
     </div>
 
     <div class="field">
-    <%= f.text_area :comment, autocomplete: "comment",  placeholder: "実際に使用してみて良かったところ、いまいちだったところ、これから選ぶ方達の為のアドバイスなどを是非教えてください。" , class: ' form' %>
+    <%= f.text_area :comment, autocomplete: "comment",  placeholder: "実際に使用してみて良かったところ、いまいちだったところ、これから選ぶ方達の為のアドバイスなどを是非教えてください。(必須)" , class: ' form' %>
     </div>
 
     <div class="field">
-    <%= f.number_field :score, autocomplete: "score", placeholder: "1~10の間で評価を入力", in: 1...11, class: ' form formA' %>
+    <%= f.number_field :score, autocomplete: "score", placeholder: "1~10の間で評価を入力(必須)", in: 1...11, class: ' form formA' %>
     </div>
 
     <div class="field">
     <%= f.submit "口コミを投稿する", class: ' btn' %>
     </div>
     <% end %>
+    <%= link_to "#{@brand.name}のクチコミをみる", comments_path %>
 </div>
 
 <script>
+
+$(".btn").on('click', function(){
+  if ($('#comment_name').val() == '') {
+    alert('お名前を入力してください');
+    return false;
+  }
+  if ($('#comment_comment').val() == '') {
+    alert('口コミ内容を入力してください');
+    return false;
+  }
+  if ($('#comment_score').val() == '') {
+    alert('評価を入力してください');
+    return false;
+  }
+
+});
+
+
 var i = 0;
   $(".image_slide").each(function(i) {
     $(this).attr('id','photo' + (i+1));
