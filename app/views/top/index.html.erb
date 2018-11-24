@@ -1,12 +1,16 @@
 <%= stylesheet_link_tag  'top', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 <div class="conteiner">
+<div class="comment">
+    <%= link_to(new_comment_path, class: '') do %>
+    <%= image_tag 'comment.png', :size =>'25x25' %>
+    クチコミを募集してます！
+    <% end %>
+    </div>
     <div class="conA">
-
     <h5>住まいの設備や素材を比較・検討</h5>
     <h1>住まいのカタログ<%= image_tag 'home.png', :size =>'23x23' %></h1>
          <div class="panda">
-
          </div>
     <p>あなたにピッタリな住まいの設備・内装を探すことが出来ます</p>
     <%= link_to(about_brands_path, class: 'search') do %>

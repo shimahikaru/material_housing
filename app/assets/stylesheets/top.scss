@@ -4,6 +4,23 @@
 .conteiner {
 margin-top: 55px;
 width: 100vw;
+  .comment {
+    width: 98%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #f65314;
+    height: 40px;
+    border-radius: 3px;
+     a {
+      color: #fff;
+      text-decoration: none;
+      align-items: center;
+      padding: 10px auto;
+       img {
+        padding-top: 10px;
+       }
+     }
+  }
 h5 {
   font-size: 11px;
   color: #777777;
