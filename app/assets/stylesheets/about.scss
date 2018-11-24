@@ -29,8 +29,13 @@ margin-top: 55px;
       }
       select {
         height: 30px;
+        width: 90%;
+        max-width: 600px;
+        margin-right: auto;
+        margin-left: auto;
       }
       .tag {
+        max-width: 600px;
         input {
           display: none;
         }
@@ -56,10 +61,10 @@ margin-top: 55px;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
-    padding:10px 45px;
+    padding:10px 75px;
     border-radius: 3px;
     border: none;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.9em;
      box-shadow: 0 6px 0 #bf5b20;
       &:hover {
         background-color: #bf5b20;
