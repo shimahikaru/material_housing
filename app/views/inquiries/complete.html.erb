@@ -1,5 +1,7 @@
-
-<p>
-  お問い合わせが完了しました。
-</p>
-<%= link_to "ホームに戻る", root_path %>
+<%= stylesheet_link_tag  'inquiries', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="email">
+<p>お問い合わせが完了しました。</p>
+  <div class="field">
+  <%= link_to "ホームに戻る", root_path, :class=>"button" %>
+  </div>
+</div>
