@@ -12,7 +12,7 @@ width: 100vw;
     background-color: #f65314;
     height: 55px;
     border-radius: 8px;
-    border: double 8px #fff;
+    border: double 8px #fffaec;
     max-width: 1200px;
       &:hover {
         opacity: 0.6;
@@ -59,13 +59,25 @@ width: 100%;
       margin-left: auto;
       margin-top: 20px;
     }
+  .conA-1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: solid 4px #00b0ca;
+    border-top: solid 4px #00b0ca;
+    border-radius: 3px;
+    width: 98%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .conA {
-    border-bottom: double 5px #00b0ca;
-    border-top: double 5px #00b0ca;
+    margin-top: 0;
+    border-bottom: solid 1px #00b0ca;
+    border-top: solid 1px #00b0ca;
     background-color: #fff;
     padding-top: 40px;
     padding-bottom: 45px;
-    border-radius: 3px;
+    width: 100%;
     .panda {
       margin-bottom: 15px;
     }
@@ -73,8 +85,8 @@ width: 100%;
       font-size: 13px;
       line-height: 25px;
       font-weight: bold;
-      margin-top: -20px;
-      margin-bottom: 55px;
+      margin-top: -5px;
+      margin-bottom: 45px;
     }
     a.search {
       background-color: #f65314;
