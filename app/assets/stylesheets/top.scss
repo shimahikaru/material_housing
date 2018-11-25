@@ -5,19 +5,31 @@
 margin-top: 55px;
 width: 100vw;
   .comment {
-    width: 98%;
+    margin-top: 10px;
+    width: 96%;
     margin-right: auto;
     margin-left: auto;
     background-color: #f65314;
-    height: 40px;
-    border-radius: 3px;
+    height: 55px;
+    border-radius: 8px;
+    border: double 8px #fff;
+      &:hover {
+        opacity: 0.6;
+       }
      a {
-      color: #fff;
+      color:  #fff;
       text-decoration: none;
       align-items: center;
-      padding: 10px auto;
-       img {
-        padding-top: 10px;
+      display: flex;
+      justify-content: center;
+       img.image_comment {
+        margin-right: 5px;
+       }
+       p {
+        font-size: 17px;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        line-height: 55px;
        }
      }
   }
@@ -42,8 +54,8 @@ width: 100%;
       margin-top: 20px;
     }
   .conA {
-    border-bottom: solid 3px #00b0ca;
-    border-top: solid 3px #00b0ca;
+    border-bottom: double 5px #00b0ca;
+    border-top: double 5px #00b0ca;
     background-color: #fff;
     padding-top: 40px;
     padding-bottom: 45px;
