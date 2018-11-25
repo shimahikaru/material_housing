@@ -2,7 +2,7 @@
 
 <div class="container">
 <h2><%= @brand.name %></h2>
-<h4><%= link_to @brand.location, search_brands_path(location: @brand.location) %> / <%= link_to @brand.company.name, company_path(@brand.company) %></h4>
+<h4><%= link_to @brand.location, search_brands_path(location: @brand.location) %>   <%= link_to @brand.company.name, company_path(@brand.company) %></h4>
 
   <div class="slide">
   <% @images.each_with_index do |p, i| %>
@@ -82,7 +82,7 @@
 <div class="word">キーワード：</div>
 <div class="listF">
 <% @keywords.each do |i| %>
-<%= link_to "##{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
+<%= link_to "#{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
 <% end %>
 </div>
 
@@ -101,7 +101,8 @@
     </div>
 
     <div class="field">
-    <%= f.file_field :place_image, autocomplete: "place_image",  placeholder: "写真" , class: ' form' %>
+    <label><%= f.file_field :place_image, autocomplete: "place_image",  placeholder: "写真" , class: ' form' %>
+    </label>
     </div>
 
     <div class="field">
@@ -109,7 +110,8 @@
     </div>
 
     <div class="field">
-    <%= f.select :score, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], class: ' form formA' %>
+      <h6>評価（５点満点）</h6>
+    <%= f.select :score, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], :prompt => "選択してください(必須)", class: ' form formA' %>
     </div>
 
     <div class="field">
