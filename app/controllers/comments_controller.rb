@@ -13,6 +13,10 @@ def new
   @brands = Brand.select(:id, :name)
 end
 
+# def get_brands
+#     render partial: 'select_brand', locals: {company_id: params[:company_id]}
+#   end
+
 def create
   @comment = Comment.new(create_params)
   @comment.save

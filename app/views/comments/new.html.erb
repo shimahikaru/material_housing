@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag  'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="index">
+  <div class="list-content show">
+    <%= form_with model: @comment, :url => { :controller => :comments, :action => :create }, local: true  do |f| %>
+
+      <div class="field">
+      <%= f.collection_select :brand_id, @brands.all, :id, :name %>
+      </div>
+      <div class="field">
+      <%= f.text_field :name, autocomplete: "name",  placeholder: "お名前(必須)", class: 'form formA' %>
+      </div>
+
+      <div class="field">
+      <%= f.file_field :place_image, autocomplete: "place_image",  placeholder: "写真" , class: ' form' %>
+      </div>
+
+      <div class="field">
+      <%= f.text_area :comment, autocomplete: "comment",  placeholder: "実際に使用してみて良かったところ、いまいちだったところ、これから選ぶ方達の為のアドバイスなどを是非教えてください。(必須)" , class: ' form' %>
+      </div>
+
+      <div class="field">
+      <%= f.select :score, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], class: ' form formA' %>
+      </div>
+
+      <div class="field">
+      <%= f.submit "口コミを投稿する", class: ' btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

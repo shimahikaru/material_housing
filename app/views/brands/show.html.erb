@@ -109,7 +109,7 @@
     </div>
 
     <div class="field">
-    <%= f.number_field :score, autocomplete: "score", placeholder: "1~10の間で評価を入力(必須)", in: 1...11, class: ' form formA' %>
+    <%= f.select :score, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], class: ' form formA' %>
     </div>
 
     <div class="field">

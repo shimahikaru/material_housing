@@ -31,6 +31,22 @@
         color: #666666;
        }
      }
+    //コメント投稿ページ
+     .field {
+      margin-bottom: 20px;
+       .form {
+        width: 97%;
+        height: 28px;
+        border-radius: 3px;
+       }
+       select {
+        width: 99%;
+        height: 28px;
+       }
+       #comment_comment {
+        height: 150px;
+       }
+     }
    }
    .list-content.show {
     img.image {

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get :about
     end
   end
+
   resources :comments, only: [:index, :show, :new, :create]
 
 end
