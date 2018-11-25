@@ -61,7 +61,7 @@
 
 <div class="listB">
     <div class="pickup">
-    <%= image_tag 'light.png', :size =>'40x40' %><p class=listC>イチオシ機能</p>
+    <%= image_tag 'light.png', :size =>'33x33' %><p class=listC>イチオシ機能</p>
     </div>
     <% @details.each do |p| %>
     <h3><%= p.title %></h3>
@@ -135,7 +135,7 @@ $(".btn").on('click', function(){
     return false;
   }
   if ($('#comment_score').val() == '') {
-    alert('評価を入力してください');
+    alert('評価を選択してください');
     return false;
   }
 

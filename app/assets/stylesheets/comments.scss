@@ -65,6 +65,23 @@
      }
    }
    .list-content.show {
+    h3.text {
+      font-size: 19px;
+      margin-bottom: 10px;
+      border-left: solid 4px #f65314;
+      padding-left: 5px;
+    }
+    h6 {
+      font-size: 13px;
+      // font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+    }
+    p.text {
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
     img.image {
       width: 100%;
     }

@@ -1,10 +1,12 @@
 <%= stylesheet_link_tag  'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div class="index">
   <div class="list-content show">
+    <h3 class="text">クチコミ投稿フォーム</h3>
+    <p class="text">良かったところ、イマイチだったところ、商品を検討している方へ向けてのアドバイスなど実際に使ってみた感想を教えてください。</p>
     <%= form_with model: @comment, :url => { :controller => :comments, :action => :create }, local: true  do |f| %>
 
       <div class="field">
-      <%= f.collection_select :brand_id, @brands.all, :id, :name %>
+      <%= f.collection_select :brand_id, @brands.all, :id, :name, :prompt => "選択してください(必須)" %>
       </div>
       <div class="field">
       <%= f.text_field :name, autocomplete: "name",  placeholder: "お名前(必須)", class: 'form formA' %>
@@ -19,7 +21,8 @@
       </div>
 
       <div class="field">
-      <%= f.select :score, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], class: ' form formA' %>
+        <h6>評価（５点満点）</h6>
+      <%= f.select :score, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], :prompt => "選択してください(必須)", class: ' form formA' %>
       </div>
 
       <div class="field">
@@ -28,3 +31,28 @@
     <% end %>
   </div>
 </div>
+
+
+<script>
+
+$(".btn").on('click', function(){
+  if ($('#comment_brand_id').val() == '') {
+    alert('商品を選択してください');
+    return false;
+  }
+  if ($('#comment_name').val() == '') {
+    alert('お名前を入力してください');
+    return false;
+  }
+  if ($('#comment_comment').val() == '') {
+    alert('口コミ内容を入力してください');
+    return false;
+  }
+  if ($('#comment_score').val() == '') {
+    alert('評価を選択してください');
+    return false;
+  }
+
+});
+
+</script>
