@@ -29,12 +29,13 @@ margin-top: 55px;
       }
       select {
         height: 30px;
-        width: 90%;
+        width: 95%;
         max-width: 600px;
         margin-right: auto;
         margin-left: auto;
       }
       .tag {
+        width: 95%;
         max-width: 600px;
         input {
           display: none;
@@ -60,8 +61,12 @@ margin-top: 55px;
     background-color: #f65314;
     color: #fff;
     font-size: 16px;
+    line-height: 30px;
     font-weight: bold;
-    padding:10px 75px;
+    width: 95%;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 3px;
     border: none;
     letter-spacing: 0.9em;

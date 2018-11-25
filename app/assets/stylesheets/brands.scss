@@ -47,8 +47,14 @@
         line-height: 27px;
       }
       p {
-        padding-bottom: 10px;
-        font-size: 13px;
+        color: #000;
+        border: solid 1px #cfcfcf;
+        text-decoration: none;
+        border-radius: 3px;
+        padding: 3px 6px;
+        margin-right: 5px;
+        font-size: 12px;
+        display: inline-block;
       }
    }
 }

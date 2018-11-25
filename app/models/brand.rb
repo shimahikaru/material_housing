@@ -1,4 +1,5 @@
 class Brand < ApplicationRecord
+  is_impressionable
   belongs_to :company
 
   has_many :brandimages, inverse_of: :brand, dependent: :delete_all

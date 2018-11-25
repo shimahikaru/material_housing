@@ -4,7 +4,7 @@
 <%= link_to(brand_path(brand.id)) do %>
   <div class="listA">
   <h3><%= brand.name %></h3>
-  <p><%= brand.location %> / <%= brand.grade %></p>
+  <p><%= brand.location %> <%= brand.grade %></p>
   </div>
   <% brand.brandimages.each_with_index do |p, i| %>
   <%= image_tag p.image_url, :class => "image_view" %>
