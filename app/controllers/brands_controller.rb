@@ -28,6 +28,7 @@ class BrandsController < ApplicationController
   def search
    @brands = Brand.select(:id, :name, :company_id, :location, :grade)
    @brandimages = Brandimage.group(:brand_id)
+   @brands = @brands.count_order(params[:count]) if params[:count].present?
    @brands = @brands.where(location: params[:location]) if params[:location].present?
    @brands = @brands.where(company_id: params[:company_id]) if params[:company_id].present?
    @brands = @brands.where(grade: params[:grade]) if params[:grade].present?

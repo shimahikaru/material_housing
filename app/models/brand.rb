@@ -1,5 +1,6 @@
 class Brand < ApplicationRecord
-  is_impressionable
+  is_impressionable counter_cache: true
+
   belongs_to :company
 
   has_many :brandimages, inverse_of: :brand, dependent: :delete_all
@@ -37,6 +38,13 @@ class Brand < ApplicationRecord
   has_many :materials, through: :brand_materials
   # accepts_nested_attributes_for :brand_materials, reject_if: :all_blank, allow_destroy: true
 
+  def self.count_order(count)
+    if count == "2"
+      self.reorder('completion DESC')
+    elsif count == "1"
+    self.reorder('impressions_count DESC')
+    end
+  end
 
   def self.search_keyword(words)
       keyword = BrandKeyword.searchkeywords(words)
