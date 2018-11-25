@@ -5,7 +5,7 @@
   margin-top: 55px;
   width: 100%;
    .list-content {
-    background-color: #fff;
+    background-color: none;
     width: 97%;
     margin-right: auto;
     margin-left: auto;
@@ -38,6 +38,7 @@
         width: 97%;
         height: 28px;
         border-radius: 3px;
+        border: none;
        }
        .formA {
         width: 95%;
@@ -45,9 +46,21 @@
        select {
         width: 99%;
         height: 28px;
+        border: none;
        }
        #comment_comment {
-        height: 150px;
+        height: 180px;
+       }
+       .btn {
+        width: 99%;
+        height: 35px;
+        border-radius: 3px;
+        background-color: #f65314;
+        color: #fff;
+        box-shadow: 0 5px 0 #bf5b20;
+        border: none;
+        font-weight: bold;
+        letter-spacing: 0.2em;
        }
      }
    }
