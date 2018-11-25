@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_062306) do
+ActiveRecord::Schema.define(version: 2018_11_25_071426) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "question_id"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_062306) do
     t.integer "color"
     t.date "completion"
     t.integer "impressions_count", default: 0
+    t.integer "delivery"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -1,3 +1,53 @@
 // Place all the styles related to the inquiries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.email {
+  margin-top: 55px;
+  background-color: none;
+  width: 90%;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 35px 5px;
+  text-align: left;
+  border-radius: 3px;
+    h3 {
+      font-size: 20px;
+      line-height: 35px;
+      border-left: solid 4px #f65314;
+      padding-left: 5px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 12px;
+      line-height: 25px;
+      margin-bottom: 15px;
+    }
+    .field {
+      margin-bottom: 20px;
+      width: 100%;
+       label {
+        font-size: 14px;
+        font-weight: bold;
+       }
+       .form, .button {
+        width: 100%;
+        border-radius: 3px;
+        border: none;
+        height: 26px;
+       }
+       .text {
+        height: 170px;
+       }
+       .button {
+        background-color: #f65314;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 35px;
+        height: 35px;
+        letter-spacing: 0.6em;
+       }
+    }
+}
