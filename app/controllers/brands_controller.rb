@@ -44,7 +44,7 @@ class BrandsController < ApplicationController
     @brand = Brand.new
     @company = Company.all
     5.times { @brand.brandimages.build }
-    5.times { @brand.details.build }
+    8.times { @brand.details.build }
     5.times { @brand.tags.build }
   end
 
@@ -54,7 +54,7 @@ class BrandsController < ApplicationController
     if @brand.save
     else
       ( 5 - @brand.brandimages.to_a.count).times { @brand.brandimages.build }
-      ( 5 - @brand.details.to_a.count).times { @brand.details.build }
+      ( 8 - @brand.details.to_a.count).times { @brand.details.build }
       ( 5 - @brand.tags.build.to_a.count).times { @brand.tags.build }
       render action: :new
     end
@@ -64,7 +64,7 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
     @company = Company.all
     ( 5 - @brand.brandimages.length).times { @product.brandimages.build }
-    ( 5 - @brand.details.length).times { @brand.details.build }
+    ( 8 - @brand.details.length).times { @brand.details.build }
     ( 5 - @brand.tags.length).times { @brand.tags.build }
   end
 
@@ -74,7 +74,7 @@ class BrandsController < ApplicationController
     if @brand.update(update_params)
     else
     ( 5 - @brand.brandimages.to_a.count).times { @brand.brandimages.build }
-    ( 5 - @brand.details.to_a.count).times { @brand.details.build }
+    ( 8 - @brand.details.to_a.count).times { @brand.details.build }
     ( 5 - @brand.tags.build.to_a.count).times { @brand.tags.build }
     render action: :edit
     end
