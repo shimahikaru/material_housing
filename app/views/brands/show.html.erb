@@ -23,8 +23,8 @@
 <div class="listA">
 <ul>
 <p>グレード：<%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
-<p>価格：<%= @brand.price %>円〜</p>
-<p>カラー：<%= @brand.color %>色</p>
+<p>価格：<%= @brand.price %>〜</p>
+<p>カラー：<%= @brand.color %></p>
 
 <%if @sizes.count > 0 %>
   <p>Ｗ：<% @sizes.each do |i| %>

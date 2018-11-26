@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_071426) do
+ActiveRecord::Schema.define(version: 2018_11_26_101439) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "question_id"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_071426) do
     t.string "pagelink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "color"
+    t.string "color"
     t.date "completion"
     t.integer "impressions_count", default: 0
     t.integer "delivery"
