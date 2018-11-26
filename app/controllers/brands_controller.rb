@@ -82,11 +82,11 @@ class BrandsController < ApplicationController
 
   private
   def create_params
-    params.require(:brand).permit(:name, :location, :text, :grade, :price, :completion, :pagelink, :color, :company_id, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :delivery, :location, :text, :grade, :price, :completion, :pagelink, :color, :company_id, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
   def update_params
-    params.require(:brand).permit(:name, :location, :company_id, :text, :grade, :price, :completion, :pagelink, :color, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :delivery, :location, :company_id, :text, :grade, :price, :completion, :pagelink, :color, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
 

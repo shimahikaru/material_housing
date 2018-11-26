@@ -23,8 +23,9 @@
 <div class="listA">
 <ul>
 <p>グレード：<%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
-<p>価格：<%= @brand.price %>〜</p>
+<p>参考価格：<%= @brand.price %>〜</p>
 <p>カラー：<%= @brand.color %></p>
+<% if @brand.delivery? %><p>納期：<%= @brand.delivery %></p><% end %>
 
 <%if @sizes.count > 0 %>
   <p>Ｗ：<% @sizes.each do |i| %>
