@@ -26,7 +26,7 @@
 <p>参考価格：<%= @brand.price %>〜</p>
 <p>カラー：<%= @brand.color %></p>
 <% if @brand.delivery? %><p>納期：<%= @brand.delivery %></p><% end %>
-<% if @brand.completion? %><p>発売開始：<%= @brand.completion.strftime("%Y%m") %></p><% end %>
+<% if @brand.completion? %><p>発売開始：<%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
 
 <%if @sizes.count > 0 %>
   <p>Ｗ：<% @sizes.each do |i| %>
