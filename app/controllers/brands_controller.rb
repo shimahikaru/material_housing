@@ -64,7 +64,7 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
     @company = Company.all
     @images = @brand.brandimages.select(:id, :image, :comment)
-    ( 3 - @images.length).times { @product.brandimages.build }
+    ( 5 - @images.length).times { @product.brandimages.build }
     ( 8 - @brand.details.length).times { @brand.details.build }
     ( 5 - @brand.tags.length).times { @brand.tags.build }
   end
