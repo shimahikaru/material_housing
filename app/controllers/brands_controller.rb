@@ -63,7 +63,8 @@ class BrandsController < ApplicationController
   def edit
     @brand = Brand.find(params[:id])
     @company = Company.all
-    ( 5 - @brand.brandimages.length).times { @product.brandimages.build }
+    @images = @brand.brandimages.select(:id, :image, :comment)
+    ( 5 - @images.length).times { @product.brandimages.build }
     ( 8 - @brand.details.length).times { @brand.details.build }
     ( 5 - @brand.tags.length).times { @brand.tags.build }
   end
