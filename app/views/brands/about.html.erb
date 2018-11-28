@@ -22,13 +22,13 @@
     <%= f.select :grade, Brand.grades.keys, {prompt: '選択してください'}, class: 'form' %><br />
     </div>
 
-    <div class="field">
+<!--     <div class="field">
     <p>キーワード</p>
     <label><div class= "tag"><%= f.collection_check_boxes(:keywords, Keyword.all, :id, :word) do |b| %>
     <%=  b.check_box %><a><%= b.label { b.text } %></a>
     <% end %></div>
     </label>
-    </div>
+    </div> -->
 
   <div class="field">
   <p><%= f.label :表示の順番 %></p>
