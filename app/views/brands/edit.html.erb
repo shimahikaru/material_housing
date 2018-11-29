@@ -27,6 +27,11 @@
      <%= f.text_field :sizeorder, autofocus: true, autocomplete: "sizeorder", class: 'form' %>
      </div>
 
+      <div class="field">
+     <p><%= f.label :ＷＨＤ %></p>
+     <%= f.text_field :volume, autofocus: true, autocomplete: "volume", class: 'form' %>
+     </div>
+
      <div class="field">
      <p><%= f.label :発売日 %></p>
      <%= f.date_select(:completion, {:discard_day => true}, start_year: 2010, end_year:(Time.now.year), :class => " form", default: Date.new(2018, 1 ))  %>

@@ -51,6 +51,7 @@
   <%= link_to i.othersize.other, search_brands_path(othersize_id: i.othersize_id) %>
   <% end %></p>
 <% end %>
+<% if @brand.volume? %><p>サイズ：<%= @brand.volume %></p><% end %>
 <% if @brand.warranty? %><p>メーカー保証：<%= @brand.warranty %></p><% end %>
 <% if @brand.sizeorder? %><p>オーダー：<%= @brand.sizeorder %></p><% end %>
 
