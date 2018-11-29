@@ -47,6 +47,16 @@
      <%= f.text_field :delivery, autofocus: true, autocomplete: "delivery", class: 'form' %>
      </div>
 
+      <div class="field">
+     <p><%= f.label :メーカー保証 %></p>
+     <%= f.text_field :warranty, autofocus: true, autocomplete: "warranty", class: 'form' %>
+     </div>
+
+      <div class="field">
+     <p><%= f.label :サイズオーダー %></p>
+     <%= f.text_field :sizeorder, autofocus: true, autocomplete: "sizeorder", class: 'form' %>
+     </div>
+
      <div class="field">
      <p><%= f.label :ホームページ %></p>
      <%= f.url_field :pagelink, autofocus: true, autocomplete: "pagelink",  placeholder: "url", class: 'form' %>

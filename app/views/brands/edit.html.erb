@@ -17,6 +17,16 @@
      <%= f.cktext_area :text, autofocus: true, autocomplete: "text", placeholder: "説明を入力", class: 'form setumei' %>
      </div>
 
+      <div class="field">
+     <p><%= f.label :メーカー保証 %></p>
+     <%= f.text_field :warranty, autofocus: true, autocomplete: "warranty", class: 'form' %>
+     </div>
+
+      <div class="field">
+     <p><%= f.label :サイズオーダー %></p>
+     <%= f.text_field :sizeorder, autofocus: true, autocomplete: "sizeorder", class: 'form' %>
+     </div>
+
      <div class="field">
      <p><%= f.label :発売日 %></p>
      <%= f.date_select(:completion, {:discard_day => true}, start_year: 2010, end_year:(Time.now.year), :class => " form", default: Date.new(2018, 1 ))  %>
@@ -39,12 +49,7 @@
 
       <div class="field">
      <p><%= f.label :標準時のカラバリ %></p>
-     <%= f.text_field :color, autofocus: true, autocomplete: "color", class: 'form' %>
-     </div>
-
-      <div class="field">
-     <p><%= f.label :納期 %></p>
-     <%= f.text_field :delivery, autofocus: true, autocomplete: "delivery", class: 'form' %>
+     <%= f.number_field :color, autofocus: true, step: "1", autocomplete: "color", class: 'form' %>
      </div>
 
      <div class="field">
