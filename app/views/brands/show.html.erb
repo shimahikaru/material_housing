@@ -22,44 +22,44 @@
 
 <div class="listA">
 <ul>
-<p>グレード：<%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
-<p>参考価格：<%= @brand.price %>〜</p>
-<p>カラー：<%= @brand.color %></p>
-<% if @brand.delivery? %><p>納期：<%= @brand.delivery %></p><% end %>
-<% if @brand.completion? %><p>発売開始：<%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
+<p><span>グレード</span><%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
+<p><span>参考価格</span><%= @brand.price %>〜</p>
+<p><span>カラー</span><%= @brand.color %></p>
+<% if @brand.delivery? %><p><span>納期：<%= @brand.delivery %></p><% end %>
+<% if @brand.completion? %><p><span>発売開始：<%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
 
 <%if @sizes.count > 0 %>
-  <p>Ｗ：<% @sizes.each do |i| %>
+  <p><span>横幅</span><% @sizes.each do |i| %>
   <%= link_to i.size.widthsize, search_brands_path(size_id: i.size_id)  %>
   <% end %></p>
 <% end %>
 
 <%if @heightsizes.count > 0 %>
-  <p>Ｈ：<% @heightsizes.each do |i| %>
+  <p><span>高さ</span><% @heightsizes.each do |i| %>
   <%= link_to i.heightsize.height, search_brands_path(heightsize_id: i.heightsize_id)  %>
   <% end %></p>
 <% end %>
 
 <%if @depthsizes.count > 0 %>
-  <p>Ｄ：<% @depthsizes.each do |i| %>
+  <p><span>奥行き</span><% @depthsizes.each do |i| %>
   <%= link_to i.depthsize.depth, search_brands_path(depthsize_id: i.depthsize_id) %>
   <% end %></p>
 <% end %>
 
 <%if @othersizes.count > 0 %>
-  <p>バリエーション：<% @othersizes.each do |i| %>
+  <p><span>バリエーション</span><% @othersizes.each do |i| %>
   <%= link_to i.othersize.other, search_brands_path(othersize_id: i.othersize_id) %>
   <% end %></p>
 <% end %>
-<% if @brand.volume? %><p>サイズ：<%= @brand.volume %></p><% end %>
-<% if @brand.warranty? %><p>メーカー保証：<%= @brand.warranty %></p><% end %>
-<% if @brand.sizeorder? %><p>オーダー：<%= @brand.sizeorder %></p><% end %>
+<% if @brand.volume? %><p><span>サイズ</span><%= @brand.volume %></p><% end %>
+<% if @brand.warranty? %><p><span>メーカー保証</span><%= @brand.warranty %></p><% end %>
+<% if @brand.sizeorder? %><p><span>オーダー</span><%= @brand.sizeorder %></p><% end %>
 
 <%if @brand.pagelink %>
-<p><%= link_to 'ウェブカタログ', @brand.pagelink %></p>
+<p><span>リンク</span><%= link_to 'ウェブカタログ', @brand.pagelink %></p>
 <% end %>
 </ul>
-<p><%== @brand.text %></p>
+<p class="text"><%== @brand.text %></p>
 
 </div>
 
