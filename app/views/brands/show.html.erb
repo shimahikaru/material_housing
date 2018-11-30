@@ -21,46 +21,7 @@
   </div>
 
 <div class="listA">
-<ul>
-<p><span>グレード</span><%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
-<p><span>参考価格</span><%= @brand.price %>〜</p>
-<p><span>カラー</span><%= @brand.color %></p>
-<% if @brand.delivery? %><p><span>納期</span><%= @brand.delivery %></p><% end %>
-<% if @brand.completion? %><p><span>発売開始</span><%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
-
-<%if @sizes.count > 0 %>
-  <p><span>横幅</span><% @sizes.each do |i| %>
-  <%= link_to i.size.widthsize, search_brands_path(size_id: i.size_id)  %>
-  <% end %></p>
-<% end %>
-
-<%if @heightsizes.count > 0 %>
-  <p><span>高さ</span><% @heightsizes.each do |i| %>
-  <%= link_to i.heightsize.height, search_brands_path(heightsize_id: i.heightsize_id)  %>
-  <% end %></p>
-<% end %>
-
-<%if @depthsizes.count > 0 %>
-  <p><span>奥行き</span><% @depthsizes.each do |i| %>
-  <%= link_to i.depthsize.depth, search_brands_path(depthsize_id: i.depthsize_id) %>
-  <% end %></p>
-<% end %>
-
-<%if @othersizes.count > 0 %>
-  <p><span>バリエーション</span><% @othersizes.each do |i| %>
-  <%= link_to i.othersize.other, search_brands_path(othersize_id: i.othersize_id) %>
-  <% end %></p>
-<% end %>
-<% if @brand.volume? %><p><span>サイズ</span><%= @brand.volume %></p><% end %>
-<% if @brand.warranty? %><p><span>メーカー保証</span><%= @brand.warranty %></p><% end %>
-<% if @brand.sizeorder? %><p><span>オーダー</span><%= @brand.sizeorder %></p><% end %>
-
-<%if @brand.pagelink %>
-<p><span>リンク</span><%= link_to 'ウェブカタログ', @brand.pagelink %></p>
-<% end %>
-</ul>
-<div class="text"><%== @brand.text %></div>
-
+  <div class="text"><%== @brand.text %></div>
 </div>
 
 
@@ -82,6 +43,47 @@
 <% @tags.each do |p| %>
 <p><%= simple_format(p.about) %></p>
 <% end %>
+</div>
+
+<div class="listA">
+  <ul>
+  <p><span>グレード</span><%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
+  <p><span>参考価格</span><%= @brand.price %>〜</p>
+  <p><span>カラー</span><%= @brand.color %></p>
+  <% if @brand.delivery? %><p><span>納期</span><%= @brand.delivery %></p><% end %>
+  <% if @brand.completion? %><p><span>発売開始</span><%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
+
+  <%if @sizes.count > 0 %>
+    <p><span>横幅</span><% @sizes.each do |i| %>
+    <%= link_to i.size.widthsize, search_brands_path(size_id: i.size_id)  %>
+    <% end %></p>
+  <% end %>
+
+  <%if @heightsizes.count > 0 %>
+    <p><span>高さ</span><% @heightsizes.each do |i| %>
+    <%= link_to i.heightsize.height, search_brands_path(heightsize_id: i.heightsize_id)  %>
+    <% end %></p>
+  <% end %>
+
+  <%if @depthsizes.count > 0 %>
+    <p><span>奥行き</span><% @depthsizes.each do |i| %>
+    <%= link_to i.depthsize.depth, search_brands_path(depthsize_id: i.depthsize_id) %>
+    <% end %></p>
+  <% end %>
+
+  <%if @othersizes.count > 0 %>
+    <p><span>バリエーション</span><% @othersizes.each do |i| %>
+    <%= link_to i.othersize.other, search_brands_path(othersize_id: i.othersize_id) %>
+    <% end %></p>
+  <% end %>
+  <% if @brand.volume? %><p><span>サイズ</span><%= @brand.volume %></p><% end %>
+  <% if @brand.warranty? %><p><span>メーカー保証</span><%= @brand.warranty %></p><% end %>
+  <% if @brand.sizeorder? %><p><span>オーダー</span><%= @brand.sizeorder %></p><% end %>
+
+  <%if @brand.pagelink %>
+  <p><span>リンク</span><%= link_to 'ウェブカタログ', @brand.pagelink %></p>
+  <% end %>
+  </ul>
 </div>
 
 <div class="word">キーワード：</div>
