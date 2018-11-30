@@ -55,12 +55,7 @@
     ul {
       border: solid 1px #efecea;
       border-radius: 3px;
-    }
-   ul p:last-child {
-      border: none;
-      padding-bottom: 0;
-    }
-    p {
+          p {
       font-size: 14px;
       line-height: 22px;
       margin-bottom: 7px;
@@ -83,8 +78,19 @@
         margin-bottom: 3px;
        }
     }
-    p.text {
+    }
+   ul p:last-child {
       border: none;
+      padding-bottom: 0;
+    }
+    .text {
+      border: none;
+      p {
+        font-size: 14px;
+        line-height: 24px;
+        margin: 10px auto;
+        padding-left: 5px;
+      }
     }
   }
   .listB {

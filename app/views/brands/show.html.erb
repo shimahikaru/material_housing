@@ -25,8 +25,8 @@
 <p><span>グレード</span><%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
 <p><span>参考価格</span><%= @brand.price %>〜</p>
 <p><span>カラー</span><%= @brand.color %></p>
-<% if @brand.delivery? %><p><span>納期：<%= @brand.delivery %></p><% end %>
-<% if @brand.completion? %><p><span>発売開始：<%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
+<% if @brand.delivery? %><p><span>納期</span><%= @brand.delivery %></p><% end %>
+<% if @brand.completion? %><p><span>発売開始</span><%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
 
 <%if @sizes.count > 0 %>
   <p><span>横幅</span><% @sizes.each do |i| %>
@@ -59,7 +59,7 @@
 <p><span>リンク</span><%= link_to 'ウェブカタログ', @brand.pagelink %></p>
 <% end %>
 </ul>
-<p class="text"><%== @brand.text %></p>
+<div class="text"><%== @brand.text %></div>
 
 </div>
 
