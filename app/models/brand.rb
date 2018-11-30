@@ -9,6 +9,10 @@ class Brand < ApplicationRecord
   has_many :details, inverse_of: :brand, dependent: :delete_all
   accepts_nested_attributes_for :details, reject_if: :all_blank, allow_destroy: true
 
+  has_many :prices, inverse_of: :brand, dependent: :delete_all
+  accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
+
+
   has_many :comments, ->{ order("updated_at DESC")}, dependent: :delete_all
 
   has_many :tags, inverse_of: :brand, dependent: :delete_all

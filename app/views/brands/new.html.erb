@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag  'brands', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+<div class="index">
    <%= form_with model: @brand, :url => { :controller => :brands, :action => :create }, local: true  do |f| %>
 
      <div class="field">
@@ -38,6 +39,14 @@
      </div>
 
       <div class="field">
+      <p>金額</p>
+        <%= f.fields_for :prices do |i| %>
+          <%= f.number_field :money, autofocus: true, autocomplete: "money", placeholder: "金額(例　190,000)" , class: 'form' %>
+          <label><%= i.text_field :type, autofocus: true, autocomplete: "type",  placeholder: "タイプ(例　おすすめプラン）" , class: 'form' %></label>
+        <% end %>
+       </div>
+
+      <div class="field">
      <p><%= f.label :標準時のカラバリ %></p>
      <%= f.text_field :color, autofocus: true, autocomplete: "color", class: 'form' %>
      </div>
@@ -58,7 +67,7 @@
      </div>
 
       <div class="field">
-     <p><%= f.label :ＷＨＤ %></p>
+     <p><%= f.label :ＷＤＨ %></p>
      <%= f.text_field :volume, autofocus: true, autocomplete: "volume", class: 'form' %>
      </div>
 
@@ -122,7 +131,7 @@
        </div>
 
      <div class="field">
-     <p><%= f.label :その他のサイズ%></p>
+     <p><%= f.label :キーワード%></p>
      <label><%= f.collection_check_boxes(:keyword_ids, Keyword.all, :id, :word) do |b| %>
       <%=  b.check_box %><a><%= b.label { b.text } %></a>
       <% end %></label>
@@ -133,3 +142,4 @@
         </div>
 
     <% end %>
+</div>

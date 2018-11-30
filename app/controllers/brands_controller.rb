@@ -46,6 +46,7 @@ class BrandsController < ApplicationController
     5.times { @brand.brandimages.build }
     8.times { @brand.details.build }
     5.times { @brand.tags.build }
+    10.times { @brand.prices.build }
   end
 
   def create
@@ -56,6 +57,7 @@ class BrandsController < ApplicationController
       ( 5 - @brand.brandimages.to_a.count).times { @brand.brandimages.build }
       ( 8 - @brand.details.to_a.count).times { @brand.details.build }
       ( 5 - @brand.tags.build.to_a.count).times { @brand.tags.build }
+      ( 10 - @brand.prices.build.to_a.count).times { @brand.prices.build }
       render action: :new
     end
   end
@@ -67,6 +69,7 @@ class BrandsController < ApplicationController
     ( 5 - @images.length).times { @product.brandimages.build }
     ( 8 - @brand.details.length).times { @brand.details.build }
     ( 5 - @brand.tags.length).times { @brand.tags.build }
+    ( 10 - @brand.prices.length).times { @brand.prices.build }
   end
 
   def update
@@ -77,17 +80,18 @@ class BrandsController < ApplicationController
     ( 5 - @brand.brandimages.to_a.count).times { @brand.brandimages.build }
     ( 8 - @brand.details.to_a.count).times { @brand.details.build }
     ( 5 - @brand.tags.build.to_a.count).times { @brand.tags.build }
+    ( 10 - @brand.prices.build.to_a.count).times { @brand.prices.build }
     render action: :edit
     end
   end
 
   private
   def create_params
-    params.require(:brand).permit(:name, :delivery, :location, :text, :grade, :warranty, :sizeorder, :volume, :price, :completion, :pagelink, :color, :company_id, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :delivery, :location, :text, :grade, :warranty, :sizeorder, :volume, :price, :completion, :pagelink, :color, :company_id, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, prices_attributes:[:id, :type, :money, :_destroy], brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
   def update_params
-    params.require(:brand).permit(:name, :delivery, :location, :company_id, :text, :grade, :warranty, :sizeorder, :volume, :price, :completion, :pagelink, :color, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
+    params.require(:brand).permit(:name, :delivery, :location, :company_id, :text, :grade, :warranty, :sizeorder, :volume, :price, :completion, :pagelink, :color, { :size_ids=> [] }, { :material_ids=> [] }, { :keyword_ids=> [] }, { :othersize_ids=> [] }, { :heightsize_ids=> [] }, { :depthsize_ids=> [] }, prices_attributes:[:id, :type, :money, :_destroy], brandimages_attributes:[:id, :image, :image_cache, :comment, :_destroy],details_attributes:[:id, :photo, :photo_cache, :title, :text, :_destroy], tags_attributes:[:id, :about, :_destroy])
   end
 
 
