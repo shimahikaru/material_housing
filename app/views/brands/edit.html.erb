@@ -55,7 +55,7 @@
       <div class="field">
       <p>金額</p>
         <%= f.fields_for :prices do |i| %>
-          <%= f.number_field :money, autofocus: true, autocomplete: "money", placeholder: "金額(例　190,000)" , class: 'form' %>
+          <%= i.number_field :money, autofocus: true, autocomplete: "money", placeholder: "金額(例　190,000)" , class: 'form' %>
           <label><%= i.text_field :modeltype, autofocus: true, autocomplete: "modeltype",  placeholder: "タイプ(例　おすすめプラン）" , class: 'form' %></label>
         <% end %>
        </div>
