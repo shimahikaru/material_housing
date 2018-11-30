@@ -28,7 +28,7 @@
      </div>
 
       <div class="field">
-     <p><%= f.label :ＷＨＤ %></p>
+     <p><%= f.label :ＷＤＨ %></p>
      <%= f.text_field :volume, autofocus: true, autocomplete: "volume", class: 'form' %>
      </div>
 
@@ -51,6 +51,14 @@
      <p><%= f.label :最低価格 %></p>
      <%= f.text_field :price, autofocus: true, autocomplete: "price",  class: 'form' %>
      </div>
+
+      <div class="field">
+      <p>金額</p>
+        <%= f.fields_for :prices do |i| %>
+          <%= f.number_field :money, autofocus: true, autocomplete: "money", placeholder: "金額(例　190,000)" , class: 'form' %>
+          <label><%= i.text_field :type, autofocus: true, autocomplete: "type",  placeholder: "タイプ(例　おすすめプラン）" , class: 'form' %></label>
+        <% end %>
+       </div>
 
       <div class="field">
      <p><%= f.label :標準時のカラバリ %></p>
