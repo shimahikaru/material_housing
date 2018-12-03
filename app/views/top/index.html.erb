@@ -18,15 +18,11 @@
     <p>クチコミを募集してます！!<br ><span>>>詳しくはクリック<<</span></p>
     <% end %>
     </div>
-
     <div class="conB">
     <p>カテゴリーから探す</p>
       <div class="conB-1">
         <%= link_to(search_brands_path(location: "キッチン"), class: 'list-content') do %>
         キッチン
-        <% end %>
-        <%= link_to(search_brands_path(location: "食洗機"), class: 'list-content') do %>
-        食洗機
         <% end %>
         <%= link_to(search_brands_path(location: "バス"), class: 'list-content') do %>
         バス
@@ -37,7 +33,7 @@
         <%= link_to(search_brands_path(location: "トイレ"), class: 'list-content') do %>
         トイレ
         <% end %>
-        <%= link_to(search_brands_path(location: "トビラ"), class: 'list-content') do %>
+        <%= link_to(search_brands_path(location: "扉"), class: 'list-content') do %>
         トビラ
         <% end %>
         <%= link_to(search_brands_path(location: "タタミ"), class: 'list-content') do %>
@@ -46,8 +42,8 @@
         <%= link_to(search_brands_path(location: "クロス"), class: 'list-content') do %>
         クロス
         <% end %>
-        <%= link_to(search_brands_path(location: "塗り壁"), class: 'list-content') do %>
-        塗り壁
+        <%= link_to(search_brands_path(location: "壁(タイル)"), class: 'list-content') do %>
+        壁(タイル)
         <% end %>
         <%= link_to(search_brands_path(location: "壁(その他)"), class: 'list-content') do %>
         壁(その他)
@@ -73,26 +69,17 @@
         <%= link_to(search_brands_path(location: "玄関床"), class: 'list-content') do %>
         玄関床
         <% end %>
-        <%= link_to(search_brands_path(location: "床(その他)"), class: 'list-content') do %>
-        床(その他)
-        <% end %>
         <%= link_to(search_brands_path(location: "タイル"), class: 'list-content') do %>
         タイル
         <% end %>
         <%= link_to(search_brands_path(location: "リビング収納"), class: 'list-content') do %>
         リビング収納
         <% end %>
-        <%= link_to(search_brands_path(location: "キッチン収納"), class: 'list-content') do %>
-        キッチン収納
-        <% end %>
         <%= link_to(search_brands_path(location: "収納(その他)"), class: 'list-content') do %>
         収納(その他)
         <% end %>
         <%= link_to(search_brands_path(location: "照明"), class: 'list-content') do %>
         照明
-        <% end %>
-        <%= link_to(search_brands_path(location: "水回りアクセサリー"), class: 'list-content') do %>
-        水回りアクセサリー
         <% end %>
         <%= link_to(search_brands_path(location: "ペット向け"), class: 'list-content') do %>
         ペット向け
