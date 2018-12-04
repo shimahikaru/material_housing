@@ -1,8 +1,11 @@
 <div class="index_editor">
 <%= link_to(editor_path(editor.id)) do %>
-<h4><%= editor.title %></h4>
+<div class="img">
 <%= image_tag editor.avatar_url, :class =>"image" %>
-<p><%== editor.description.truncate(80) %></p>
+<p><%= editor.category %></p>
+</div>
+<h4><%= editor.title %></h4>
 <% end %>
 </div>
+
 
