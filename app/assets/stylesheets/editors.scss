@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .editor {
-      margin-top: 80px;
+      margin-top: 55px;
       display: block;
-      margin-top: 10px;
       width: 97%;
       margin-left: auto;
       margin-right: auto;
@@ -79,9 +78,7 @@
       height: 80%;
       position: relative;
         img.image {
-           width: 120%;
-           margin: 0 10%;
-           height:100%;
+           width: 100%;
         }
         p {
           position: absolute;
