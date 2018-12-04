@@ -114,6 +114,7 @@ width: 100%;
       width: 100%;
       color: #777777;
       border-radius: 3px;
+      border: solid 1px #AAAAAA;
       box-shadow: 0 5px 0 #e4e4e4;
        &:hover {
         background-color: #e4e4e4;
@@ -127,7 +128,7 @@ width: 100%;
       line-height: 25px;
       font-weight: bold;
       margin-top: -5px;
-      margin-bottom: 45px;
+      margin-bottom: 30px;
     }
     a.search {
       background-color: #f65314;
