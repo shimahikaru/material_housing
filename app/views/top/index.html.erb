@@ -10,17 +10,22 @@
         </div>
     </div>
 
-<div class="comment">
+<!-- <div class="comment">
     <%= link_to(new_comment_path, class: '') do %>
     <%= image_tag 'comment.png', :size =>'25x25', :class=>"image_comment" %>
     <p>クチコミを募集してます！!<br ><span>>>詳しくはクリック<<</span></p>
     <% end %>
-    </div>
+    </div> -->
     <div class="conB">
         <p>人気のカテゴリー</p>
             <div class="index_content">
             <%= render partial: 'top/brand', collection: @brands %>
             </div>
+        <div class="conB-1">
+        <%= link_to(search_brands_path(location: "キッチン"), class: 'list-content') do %>
+        ＞ キッチンをもっと見る
+        <% end %>
+       </div>
     </div>
 <!--     <div class="conB">
     <p>カテゴリーから探す</p>
