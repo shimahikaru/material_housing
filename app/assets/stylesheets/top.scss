@@ -81,6 +81,46 @@ width: 100%;
     .panda {
       margin-bottom: 15px;
     }
+    .search_about {
+      width: 65%;
+      max-width: 600px;
+      margin-right: auto;
+      margin-left: auto;
+      .form {
+        width: 100%;
+      }
+      select {
+        -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: none;
+         display: block;
+         cursor: pointer;
+         text-align: center;
+         background: #fffaec;
+          padding: 3px;
+          color: #555555;
+          border: solid 1px #DDDDDD;
+          font-size: 13px;
+      }
+      .search {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 35px;
+      display: inline-block;
+      background-color: #fff;
+      margin-top: 15px;
+      width: 100%;
+      color: #777777;
+      border-radius: 3px;
+      box-shadow: 0 5px 0 #e4e4e4;
+       &:hover {
+        background-color: #e4e4e4;
+        color: #fff;
+        transform: translate3d(0, 5px, 0);
+       }
+      }
+    }
     p {
       font-size: 13px;
       line-height: 25px;

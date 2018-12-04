@@ -6,9 +6,7 @@
         <h5>住まいの設備や素材を比較・検討</h5>
         <h1>住まいのカタログ<%= image_tag 'home.png', :size =>'23x23' %></h1>
         <p>あなたにピッタリな住まいの設備・内装が探せます。</p>
-        <%= link_to(about_brands_path, class: 'search') do %>
-        条件から検索<%= image_tag 'search.png', :size =>'20x20' %>
-        <% end %>
+        <%= render partial: 'brands/about' %>
         </div>
     </div>
 
