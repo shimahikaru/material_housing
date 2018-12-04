@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
   impressionist :actions=> [:show]
   def index
     @image = Brandimage.group(:brand_id)
-    @brands = Brand.select(:id, :name, :location, :grade)
+    @brands = Brand.select(:id, :name, :location, :grade, :text, :price)
   end
 
   def show
@@ -26,7 +26,7 @@ class BrandsController < ApplicationController
   end
 
   def search
-   @brands = Brand.select(:id, :name, :company_id, :location, :grade)
+   @brands = Brand.select(:id, :name, :company_id, :location, :grade, :text, :price)
    @brandimages = Brandimage.group(:brand_id)
    @brands = @brands.count_order(params[:count]) if params[:count].present?
    @brands = @brands.where(location: params[:location]) if params[:location].present?
