@@ -17,6 +17,13 @@
     <% end %>
     </div>
     <div class="conB">
+        <p>人気のカテゴリー</p>
+        <h6>キッチン</h6>
+            <div class="index_content">
+            <%= render partial: 'brands/brand', collection: @brands %>
+            </div>
+    </div>
+<!--     <div class="conB">
     <p>カテゴリーから探す</p>
       <div class="conB-1">
         <%= link_to(search_brands_path(location: "キッチン"), class: 'list-content') do %>
@@ -71,7 +78,7 @@
         ペット向け
         <% end %>
       </div>
-    </div>
+    </div> -->
 
     <div class="conB">
     <p>メーカーから探す</p>
