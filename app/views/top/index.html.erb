@@ -17,13 +17,35 @@
     <% end %>
     </div> -->
     <div class="conB">
-        <p>人気のカテゴリー</p>
+        <p>キッチン</p>
             <div class="index_content">
             <%= render partial: 'top/brand', collection: @brands %>
             </div>
         <div class="conB-1">
         <%= link_to(search_brands_path(location: "キッチン"), class: 'list-content') do %>
         ＞ キッチンをもっと見る
+        <% end %>
+       </div>
+    </div>
+    <div class="conB">
+        <p>ドレッサー</p>
+            <div class="index_content">
+            <%= render partial: 'top/brand', collection: @rest_brands %>
+            </div>
+        <div class="conB-1">
+        <%= link_to(search_brands_path(location: "トイレ"), class: 'list-content') do %>
+        ＞ ドレッサーをもっと見る
+        <% end %>
+       </div>
+    </div>
+    <div class="conB">
+        <p>トイレ</p>
+            <div class="index_content">
+            <%= render partial: 'top/brand', collection: @rava_brands %>
+            </div>
+        <div class="conB-1">
+        <%= link_to(search_brands_path(location: "ラバトリー"), class: 'list-content') do %>
+        ＞ トイレをもっと見る
         <% end %>
        </div>
     </div>
@@ -84,7 +106,7 @@
       </div>
     </div> -->
 
-    <div class="conB">
+<!--     <div class="conB">
     <p>メーカーから探す</p>
         <div class="conB-1">
         <%= render partial: 'top/company', collection: @companies %>
@@ -107,7 +129,7 @@
       ベーシック
       <% end %>
       </div>
-    </div>
+    </div> -->
 <!--     <div class="conB">
     <p>住宅設備・内装についての役立つ情報</p>
         <div class="conB-1">
@@ -137,11 +159,11 @@
         <% end %>
         </div>
     </div> -->
-    <div class="conB">
+ <!--    <div class="conB">
     <p>このサイトについて</p>
     <ul>
     <li><h4>メーカー、施工会社、依頼主の情報格差をなくすことが目標</h4>
         <h6>服を選ぶときはコーディネーターやショップの店員さんにお任せしないのに、確実に服選びよりも頻度の低い家をたてるときやリフォームするときは、施工会社やコーディネーターなど人任せ・運任せの方が多いと思います。<br >しかし、<span>だいたいの家づくりの失敗や後悔の原因は知識不足・情報不足です。</span><br >「こんな設備もあったなんて知らなかった。」、「もっと最初の方に知っておきたかった。」、「こっちの方が良かった。」など、そんな声を少しでも減らし、<br ><span>家づくりに関わる全ての方が納得していただけるように情報や知識を分かりやすく整理して届けます。</span><br ></h6></li>
     </ul>
-    </div>
+    </div> -->
 </div>
