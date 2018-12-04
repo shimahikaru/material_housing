@@ -1,0 +1,14 @@
+<div class="list-content">
+<%= link_to(brand_path(brand.id)) do %>
+  <div class="listA">
+  <h3><%= brand.name %></h3>
+  <p><%= brand.grade %></p><p><%= brand.company.name %></p>
+  </div>
+<!--   <p class="price">参考価格：約<%= brand.price %></p> -->
+  <% brand.brandimages.each_with_index do |p, i| %>
+  <%= image_tag p.image_url, :class => "image_view" %>
+  <% break if i== 0 %>
+  <% end %>
+<% end %>
+ <h6><%== brand.text.truncate(60) %></h6>
+</div>
