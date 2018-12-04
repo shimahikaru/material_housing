@@ -2,7 +2,9 @@
 <%= link_to(brand_path(brand.id)) do %>
 <!--   <p class="price">参考価格：約<%= brand.price %></p> -->
   <% brand.brandimages.each_with_index do |p, i| %>
+  <div class="img">
   <%= image_tag p.image_url, :class => "image_view" %>
+</div>
   <% break if i== 0 %>
   <% end %>
   <div class="listA">
