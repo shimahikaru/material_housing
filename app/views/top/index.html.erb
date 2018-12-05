@@ -49,6 +49,10 @@
         <% end %>
        </div>
     </div>
+<%= stylesheet_link_tag  'editors', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="editor">
+<%= render partial: 'editors/editor', collection: @editors %>
+</div>
 <!--     <div class="conB">
     <p>カテゴリーから探す</p>
       <div class="conB-1">
