@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_000121) do
+ActiveRecord::Schema.define(version: 2018_12_05_033220) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "question_id"
@@ -155,6 +155,15 @@ ActiveRecord::Schema.define(version: 2018_12_04_000121) do
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "textone"
+    t.string "imageone"
+    t.text "texttwo"
+    t.string "imagetwo"
+    t.text "textthree"
+    t.string "imagethree"
+    t.text "textfour"
+    t.string "imagefour"
+    t.text "textfive"
   end
 
   create_table "heightsizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
