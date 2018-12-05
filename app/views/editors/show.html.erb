@@ -1,13 +1,36 @@
 <%= stylesheet_link_tag  'editors', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div class="editor">
   <div class="container">
+    <div class="content">
   <%= image_tag @editor.avatar_url, :class =>"image" %>
-  <h3><%= @editor.title %></h3>
-  <h4>カテゴリー：<%= link_to(search_editors_path(category: @editor.category), class: 'list-content') do %>
+  <h3><%= @editor.title %></h3><h4><%= link_to(search_editors_path(category: @editor.category), class: 'list-content') do %>
   <%= @editor.category %>
   <% end %></h4>
-<p>
-  <%== @editor.description %>
-</p>
-</div>
+    <%== @editor.description %>
+    <% if @editor.imageone? %>
+    <%= image_tag @editor.imageone_url, :class =>"image" %>
+    <% end %>
+    <% if @editor.textone? %>
+    <%== @editor.textone %>
+    <% end %>
+    <% if @editor.imagetwo? %>
+    <%= image_tag @editor.imagetwo_url, :class =>"image" %>
+    <% end %>
+    <% if @editor.texttwo? %>
+    <%== @editor.texttwo %>
+    <% end %>
+    <% if @editor.imagethree? %>
+    <%= image_tag @editor.imagethree_url, :class =>"image" %>
+    <% end %>
+    <% if @editor.textthree? %>
+    <%== @editor.textthree %>
+    <% end %>
+    <% if @editor.imagefour? %>
+    <%= image_tag @editor.imagefour_url, :class =>"image" %>
+    <% end %>
+    <% if @editor.textfour? %>
+    <%== @editor.textfour %>
+    <% end %>
+  </div>
+  </div>
 </div>

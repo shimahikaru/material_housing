@@ -79,6 +79,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def editor_params
-      params.require(:editor).permit(:title, :description, :avatar, :category)
+      params.require(:editor).permit(:title, :description, :avatar, :category, :textone, :imageone, :texttwo, :imagetwo, :textthree, :imagethree, :textfour, :imagefour, :textfive)
     end
 end

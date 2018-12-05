@@ -24,13 +24,53 @@
    </div>
 
    <div class="field">
-    <%= f.label :写真 %>
+    <%= f.label :表紙写真 %>
    <%= f.file_field :avatar, id: "", :class => "add_whole_photos", autofocus: true  %>
    </div>
 
   <div class="field">
     <%= f.label :内容 %>
     <%= f.cktext_area :description, :size =>'280x600' %>
+  </div>
+
+   <div class="field">
+    <%= f.label :写真１ %>
+   <%= f.file_field :imageone, id: "", :class => "add_whole_photos", autofocus: true  %>
+   </div>
+
+  <div class="field">
+    <%= f.label :内容１ %>
+    <%= f.cktext_area :textone, :size =>'280x600' %>
+  </div>
+
+   <div class="field">
+    <%= f.label :写真２ %>
+   <%= f.file_field :imagetwo, id: "", :class => "add_whole_photos", autofocus: true  %>
+   </div>
+
+  <div class="field">
+    <%= f.label :内容２ %>
+    <%= f.cktext_area :texttwo, :size =>'280x600' %>
+  </div>
+
+     <div class="field">
+    <%= f.label :写真３ %>
+   <%= f.file_field :imagethree, id: "", :class => "add_whole_photos", autofocus: true  %>
+   </div>
+
+  <div class="field">
+    <%= f.label :内容３ %>
+    <%= f.cktext_area :textthree, :size =>'280x600' %>
+  </div>
+
+     <div class="field">
+    <%= f.label :写真４ %>
+   <%= f.file_field :imagefour, id: "", :class => "add_whole_photos", autofocus: true  %>
+   </div>
+
+  <div class="field">
+    <%= f.label :内容４ %>
+    <%= f.cktext_area :textfour, :size =>'280x600' %>
   </div>
 
   <div class="actions">
