@@ -118,7 +118,7 @@
         <%= f.fields_for :details do |i| %>
           <label><%= i.file_field :photo, id: "", :class => "add_whole_photos", autofocus: true  %></label>
           <%= i.text_field :title, autofocus: true, autocomplete: "title",  placeholder: "一押しを一言で" , class: 'form' %><br >
-          <%= i.text_area :text, autofocus: true, autocomplete: "text",  placeholder: "一押しを更に詳しく" , class: 'text' %>
+          <%= i.cktext_area :text, autofocus: true, autocomplete: "text",  placeholder: "一押しを更に詳しく" , class: 'text' %>
         <% end %>
        </div>
 

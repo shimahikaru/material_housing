@@ -41,7 +41,7 @@
   <%= image_tag 'hito.png', :size =>'25x25' %><p class=listE>こんな人にオススメ！</p>
   </div>
 <% @tags.each do |p| %>
-<p><%= simple_format(p.about) %></p>
+<p><%== p.about %></p>
 <% end %>
 </div>
 
