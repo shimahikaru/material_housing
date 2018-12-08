@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_033220) do
+ActiveRecord::Schema.define(version: 2018_12_08_070512) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "question_id"
@@ -100,6 +100,9 @@ ActiveRecord::Schema.define(version: 2018_12_05_033220) do
     t.string "warranty"
     t.string "sizeorder"
     t.string "volume"
+    t.string "width"
+    t.string "depth"
+    t.string "height"
   end
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
