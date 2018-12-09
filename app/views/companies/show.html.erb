@@ -1,16 +1,10 @@
 <%= stylesheet_link_tag  'companies', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag  'brands', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<div class="container">
-  <div class="contentA">
-    <h2><%= @company.name %></h2>
-    <h5><%= @company.subtitle %></h5>
-    <p><%= simple_format(@company.text) %></p>
-  </div>
-  <div class="contentB">
-    <h5>ブランド一覧</h5>
-  </div>
+<div class="index">
+<%= render partial: 'brands/brand', collection: @company.brands %>
 </div>
-  <%= render partial: 'brands/brand', collection: @company.brands %>
+
 <% if user_signed_in? %>
 <%= link_to "ブランドを投稿", new_brand_path %>
 <% end %>
