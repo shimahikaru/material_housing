@@ -67,7 +67,22 @@
      </div>
 
       <div class="field">
-     <p><%= f.label :ＷＤＨ %></p>
+     <p><%= f.label :幅 %></p>
+     <%= f.text_field :width, autofocus: true, autocomplete: "width", class: 'form' %>
+     </div>
+
+      <div class="field">
+     <p><%= f.label :奥行き %></p>
+     <%= f.text_field :depth, autofocus: true, autocomplete: "depth", class: 'form' %>
+     </div>
+
+      <div class="field">
+     <p><%= f.label :高さ %></p>
+     <%= f.text_field :height, autofocus: true, autocomplete: "height", class: 'form' %>
+     </div>
+
+      <div class="field">
+     <p><%= f.label :サイズやバリエーション %></p>
      <%= f.text_field :volume, autofocus: true, autocomplete: "volume", class: 'form' %>
      </div>
 
@@ -76,33 +91,6 @@
      <%= f.url_field :pagelink, autofocus: true, autocomplete: "pagelink",  placeholder: "url", class: 'form' %>
      </div>
 
-     <div class="field">
-     <p><%= f.label :ワイドサイズ%></p>
-     <label><%= f.collection_check_boxes(:size_ids, Size.all, :id, :widthsize) do |b| %>
-      <%=  b.check_box %><a><%= b.label { b.text } %></a>
-      <% end %></label>
-     </div>
-
-     <div class="field">
-     <p><%= f.label :高さ%></p>
-     <label><%= f.collection_check_boxes(:heightsize_ids, Heightsize.all, :id, :height) do |b| %>
-      <%=  b.check_box %><a><%= b.label { b.text } %></a>
-      <% end %></label>
-     </div>
-
-     <div class="field">
-     <p><%= f.label :奥行き%></p>
-     <label><%= f.collection_check_boxes(:depthsize_ids, Depthsize.all, :id, :depth) do |b| %>
-      <%=  b.check_box %><a><%= b.label { b.text } %></a>
-      <% end %></label>
-     </div>
-
-     <div class="field">
-     <p><%= f.label :その他のサイズ%></p>
-     <label><%= f.collection_check_boxes(:othersize_ids, Othersize.all, :id, :other) do |b| %>
-      <%=  b.check_box %><a><%= b.label { b.text } %></a>
-      <% end %></label>
-     </div>
 
 
       <div class="field">

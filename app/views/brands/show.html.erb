@@ -32,7 +32,7 @@
     <% @details.each do |p| %>
     <h3><%= p.title %></h3>
     <%= image_tag p.photo_url, :class => "listB_img" %>
-    <%= simple_format(p.text) %>
+    <%= p.text %>
     <% end %>
 </div>
 
