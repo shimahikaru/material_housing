@@ -1,5 +1,16 @@
 <%= stylesheet_link_tag  'brandshow', media: 'all', 'data-turbolinks-track': 'reload' %>
 <% provide :title, "#{@brand.name} | " %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sumaino_katalog" />
+  <meta property="twitter:url" content="https://www.sumainokatarogu.com/brands/<%= @brand.id %>" />
+  <meta property="twitter:title" content="【 <%= @brand.name %> | 住まいのカタログ 】" />
+  <meta property="twitter:description" content="<%== @brand.text %>">
+    <% @images.each_with_index do |p, i| %>
+    <meta property="twitter:image" content="<%= p.image_url %>">
+    <% break if i== 0 %>
+    <% end %>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <div class="container">
 <h2><%= @brand.name %></h2>
@@ -82,7 +93,7 @@
 <%= link_to "#{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
 <% end %>
 </div>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text="<%==@brand.text.truncate(60)%>" class="twitter-share-button" data-show-count="false">Tweet</a>
+<!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text="<%= @brand.name %> | <%== @brand.text.truncate(60)%>" class="twitter-share-button" data-show-count="false">Tweet</a> -->
 </div>
 
 
