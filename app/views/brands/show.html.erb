@@ -64,6 +64,7 @@
   <%if @brand.depth? %>
     <p><span>奥行き（センチ）</span><%= @brand.depth %></p>
   <% end %>
+  <% if @brand.volume? %><p><span>サイズ・バリエーション</span><%= @brand.volume %></p><% end %>
   <% if @brand.sizeorder? %><p><span>オーダー</span><%= @brand.sizeorder %></p><% end %>
 
   <% if @brand.warranty? %><p><span>メーカー保証</span><%= @brand.warranty %></p><% end %>
