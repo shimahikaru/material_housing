@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag  'brandshow', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+<% provide :title, "#{@brand.name} | " %>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <div class="container">
 <h2><%= @brand.name %></h2>
 <h4><%= link_to @brand.location, search_brands_path(location: @brand.location) %>   <%= link_to @brand.company.name, company_path(@brand.company) %></h4>
@@ -81,7 +82,7 @@
 <%= link_to "#{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
 <% end %>
 </div>
-<%= social_share_button_tag(@brand.name, :allow_sites => %w(twitter)) %>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text=<%==@brand.text.truncate(60)%> class="twitter-share-button" data-show-count="false">Tweet</a>
 </div>
 
 

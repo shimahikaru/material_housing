@@ -15,5 +15,4 @@
 //= require rails-ujs
 //= require activestorage
 //= require ckeditor/init
-//= require social-share-button
 //= require_tree .
