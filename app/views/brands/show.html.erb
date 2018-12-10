@@ -81,8 +81,9 @@
 <%= link_to "#{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
 <% end %>
 </div>
-
+<%= social_share_button_tag(@brand.name, :allow_sites => %w(twitter)) %>
 </div>
+
 
 <div class="containerA">
   <p>感想・クチコミ投稿フォーム</p>
