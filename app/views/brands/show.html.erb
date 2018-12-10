@@ -31,7 +31,7 @@
     </div> -->
     <% @details.each do |p| %>
     <h3><%= p.title %></h3>
-    <%= image_tag p.photo_url, :class => "listB_img" %>
+    <% if p.photo? %><%= image_tag p.photo_url, :class => "listB_img" %><% end %>
     <p><%== p.text %></p>
     <% end %>
 </div>
