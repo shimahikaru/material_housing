@@ -11,9 +11,13 @@
   <h3><%= brand.name %></h3>
   <p><%= brand.grade %></p><p><%= brand.company.name %></p>
   </div>
-  <div class="rank">
-    <div class="star-ratings-sprite"><span style="width:0%" class="star-ratings-sprite-rating"></span></div>
+  <div class="listB">
+    <div class="rank">
+      <div class="star-ratings-sprite">★★★★★</div>
+      <span style="width:0%" class="star-ratings-sprite-rating">★★★★★</span>
+    </div>
+    <div class="count">( <%= brand.comments.count %> )</div>
   </div>
 <% end %>
-<!--  <h6><%== brand.text.truncate(60) %></h6> -->
+<!--  <h6><%== brand.text.truncate(60) %></h6> style="width:30%" -->
 </div>
