@@ -82,7 +82,7 @@
 <%= link_to "#{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
 <% end %>
 </div>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text=<%==@brand.text.truncate(60)%> class="twitter-share-button" data-show-count="false">Tweet</a>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text="<%==@brand.text.truncate(60)%>" class="twitter-share-button" data-show-count="false">Tweet</a>
 </div>
 
 
