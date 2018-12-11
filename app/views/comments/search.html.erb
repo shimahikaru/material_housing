@@ -1,0 +1,5 @@
+<%= stylesheet_link_tag  'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="index">
+<%= render partial: 'comments/comment', collection: @comments %>
+</div>

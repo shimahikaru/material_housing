@@ -55,20 +55,24 @@ class Brand < ApplicationRecord
       self.where(id: keyword)
   end
 
-  def self.search_size(widthes)
-      width = BrandSize.searchsizes(widthes)
-      self.where(id: width)
+  def review
+     self.comments.average(:score).to_f*20
   end
 
-  def self.search_heightsize(heightes)
-      height = BrandHeightsize.searchheightsizes(heightes)
-      self.where(id: height)
-  end
+  # def self.search_size(widthes)
+  #     width = BrandSize.searchsizes(widthes)
+  #     self.where(id: width)
+  # end
 
-  def self.search_depthsize(depthes)
-      depth = BrandDepthsize.searchdepthsizes(depthes)
-      self.where(id: depth)
-  end
+  # def self.search_heightsize(heightes)
+  #     height = BrandHeightsize.searchheightsizes(heightes)
+  #     self.where(id: height)
+  # end
+
+  # def self.search_depthsize(depthes)
+  #     depth = BrandDepthsize.searchdepthsizes(depthes)
+  #     self.where(id: depth)
+  # end
 
   def self.search_othersize(otheres)
       other = BrandOthersize.searchothersizes(otheres)

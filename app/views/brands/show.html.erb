@@ -127,7 +127,7 @@
     </div>
     <% end %>
     <div class="containerB">
-    <%= link_to ">>#{@brand.name}のクチコミをみる", comments_path, :class => "comment_link" %>
+    <%= link_to ">>#{@brand.name}のクチコミをみる", search_comments_path(brand_id: @brand.id), :class => "comment_link" %>
   </div>
 </div>
 

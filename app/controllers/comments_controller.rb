@@ -13,6 +13,10 @@ def new
   @brands = Brand.select(:id, :name)
 end
 
+def search
+  @comments = Comment.where(brand_id: params[:brand_id])
+end
+
 # def get_brands
 #     render partial: 'select_brand', locals: {company_id: params[:company_id]}
 #   end

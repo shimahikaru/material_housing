@@ -14,9 +14,9 @@
   <div class="listB">
     <div class="rank">
       <div class="star-ratings-sprite">★★★★★</div>
-      <span style="width:0%" class="star-ratings-sprite-rating">★★★★★</span>
+      <span style="width:<%= brand.review %>%" class="star-ratings-sprite-rating">★★★★★</span>
     </div>
-    <div class="count">( <%= brand.comments.count %> )</div>
+    <div class="count"><h6><%= brand.review/20 %></h6>( <%= brand.comments.count %> )</div>
   </div>
 <% end %>
 <!--  <h6><%== brand.text.truncate(60) %></h6> style="width:30%" -->
