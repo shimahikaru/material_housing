@@ -58,6 +58,8 @@
 
 <div class="listA">
   <ul>
+  <p><span>メーカー</span><%= link_to @brand.company.name, company_path(@brand.company) %></p>
+  <p><span>カテゴリー</span><%= link_to @brand.location, search_brands_path(location: @brand.location) %></p>
   <p><span>グレード</span><%= link_to @brand.grade, search_brands_path(grade: @brand.grade)  %></p>
   <p><span>参考価格</span>約<%= @brand.price %></p>
   <p><span>カラー</span><%= @brand.color %></p>
