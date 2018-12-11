@@ -2,12 +2,18 @@
 
 <div class="index">
   <div class="list-content show">
-    <h3>【<%= link_to @comment.brand.name, brand_path(@comment.brand) %>】の評価</h3>
+    <h3>【<%= link_to @comment.brand.name, brand_path(@comment.brand) %>】</h3>
     <% if @comment.place_image? %>
     <%= image_tag @comment.place_image_url, :class=>"image" %>
     <% end %>
     <p><%= @comment.comment %></p>
-    <h4>評価：<%= @comment.score %>点 / 10点満点中</h4>
+      <div class=rankA>
+    評価：
+   <div class="rank">
+     <div class="star-ratings-sprite">★★★★★</div>
+      <span style="width:<%= @comment.score*20 %>%" class="star-ratings-sprite-rating">★★★★★</span>
+    </div>
+  </div>
     <h4>名前：<%= @comment.name %></h4>
   </div>
 </div>
