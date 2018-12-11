@@ -3,6 +3,13 @@
 <%= link_to(brand_path(brand.id)) do %>
   <div class="listA">
   <h3><%= brand.name %></h3>
+  <div class="reviews">
+      <div class="rank">
+      <div class="star-ratings-sprite">★★★★★</div>
+      <span style="width:<%= brand.review %>%" class="star-ratings-sprite-rating">★★★★★</span>
+    </div>
+    <div class="count"><h6><%= brand.review/20 %></h6>( <%= brand.comments.count %> )</div>
+  </div>
   <p><%= brand.location %></p><p><%= brand.grade %></p><p><%= brand.company.name %></p>
   </div>
   <p class="price">参考価格：約<%= brand.price %></p>
