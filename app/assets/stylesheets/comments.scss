@@ -65,6 +65,14 @@
      }
    }
    .list-content.show {
+    .comment_link {
+      margin-top: 25px;
+       a {
+        color: #666666;
+        font-weight: bold;
+        font-size: 13px;
+       }
+    }
     h3.text {
       font-size: 19px;
       margin-bottom: 10px;

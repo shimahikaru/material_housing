@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag  'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="index">
+  <div class="list-content show">
+    <p>投稿が完了しました。</p>
+    <div class="comment_link">
+    <%= link_to ">>#{@comment.brand.name}のクチコミ一覧をみる", comments_path, :class => "comment_link" %>
+    </div>
+  </div>
+</div>

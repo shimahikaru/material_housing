@@ -86,7 +86,7 @@
   </ul>
 </div>
 
-<div class="word">キーワード：</div>
+<div class="word">キーワード</div>
 <div class="listF">
 <% @keywords.each do |i| %>
 <%= link_to "#{i.keyword.word}", search_brands_path(keyword_id: i.keyword_id), :class => "tags" %>
@@ -98,7 +98,7 @@
 
 <div class="containerA">
   <p>感想・クチコミ投稿フォーム</p>
-   <%= form_with model: @comment, :url => { :controller => :comments, :action => :create } do |f| %>
+   <%= form_with model: @comment, :url => { :controller => :comments, :action => :create }, local: true do |f| %>
 
       <div class="field hidden">
       <%= f.collection_select :brand_id, @brands.all, :id, :name, { :selected => @brand.id.to_i } %>
