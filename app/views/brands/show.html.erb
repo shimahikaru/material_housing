@@ -49,7 +49,7 @@
 
 <div class="listD">
   <div class="pickupA">
-  <p class=listE>こんな人にオススメ</p>
+  <p class=listE>まとめ</p>
   </div>
 <% @tags.each do |p| %>
 <p><%== p.about %></p>
@@ -64,7 +64,7 @@
   <p><span>参考価格</span>約<%= @brand.price %></p>
   <p><span>カラー</span><%= @brand.color %></p>
   <% if @brand.delivery? %><p><span>納期</span><%= @brand.delivery %></p><% end %>
-  <% if @brand.completion? %><p><span>発売開始</span><%= @brand.completion.strftime("%Y年%m月") %></p><% end %>
+<!--   <% if @brand.completion? %><p><span>発売開始</span><%= @brand.completion.strftime("%Y年%m月") %></p><% end %> -->
 
   <%if @brand.width?%>
     <p><span>横幅（センチ）</span><%= @brand.width %></p>
