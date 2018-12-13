@@ -112,7 +112,7 @@
       <p>どんな人にオススメか（簡潔に）</p>
         <%= f.fields_for :tags do |i| %>
           <label>
-          <%= i.text_area :about, autofocus: true, autocomplete: "about",  placeholder: "どんな人にオススメか。" , class: 'text' %></label>
+          <%= i.cktext_area :about, autofocus: true, autocomplete: "about",  placeholder: "どんな人にオススメか。" , class: 'text' %></label>
         <% end %>
        </div>
 

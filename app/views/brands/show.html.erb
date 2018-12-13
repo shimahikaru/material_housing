@@ -52,7 +52,7 @@
   <p class=listE>まとめ</p>
   </div>
 <% @tags.each do |p| %>
-<p><%= simple_format(p.about) %></p>
+<p><%== p.about %></p>
 <% end %>
 </div>
 
