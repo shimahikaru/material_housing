@@ -12,7 +12,7 @@
   </div>
   <p><%= brand.location %></p><p><%= brand.grade %></p><p><%= brand.company.name %></p>
   </div>
-  <p class="price">参考価格：約<%= brand.price %></p>
+  <p class="price">参考価格：約￥<%= brand.price %></p>
   <% brand.brandimages.each_with_index do |p, i| %>
   <%= image_tag p.image_url, :class => "image_view" %>
   <% break if i== 0 %>
